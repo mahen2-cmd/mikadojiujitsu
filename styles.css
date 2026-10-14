@@ -37,6 +37,9 @@
   --icon-moon: inline;
   --icon-sun: none;
 
+  --whatsapp: #168a4a;
+  --whatsapp-deep: #0f6e3a;
+
   --radius: 18px;
   --gutter: clamp(16px, 5vw, 56px);
   --display: 'Anton', 'Haettenschweiler', 'Arial Narrow', Impact, sans-serif;
@@ -133,6 +136,26 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 .button-small { padding: 9px 18px; font-size: 0.9rem; }
 
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* WhatsApp is how most people here book, so it gets its own recognisable green. */
+.button-whatsapp { gap: 8px; border-color: var(--whatsapp); background: var(--whatsapp); color: #fff; }
+.button-whatsapp:hover { border-color: var(--whatsapp-deep); background: var(--whatsapp-deep); }
+.whatsapp-icon { width: 22px; height: 22px; flex: none; }
+
+.whatsapp-float {
+  position: fixed; right: 18px; bottom: 18px; z-index: 15;
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px 12px 14px;
+  border-radius: 999px; background: var(--whatsapp); color: #fff;
+  font-weight: 600; text-decoration: none;
+  box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.45);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.whatsapp-float:hover { background: var(--whatsapp-deep); transform: translateY(-2px); }
+.whatsapp-float .whatsapp-icon { width: 26px; height: 26px; }
+@media (max-width: 640px) {
+  .whatsapp-float { padding: 14px; }
+  .whatsapp-float span { display: none; }
+}
 
 .text-link { font-weight: 600; color: var(--accent); text-underline-offset: 4px; }
 
