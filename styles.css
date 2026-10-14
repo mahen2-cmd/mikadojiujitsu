@@ -567,13 +567,15 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 
 /* The not-found page: a big taped "404" over the hero photo. */
 .not-found-code {
-  position: absolute; left: -22px; bottom: 28px; padding: 0.02em 0.22em 0.06em;
-  font-family: var(--display); font-size: clamp(4rem, 11vw, 8.5rem); line-height: 1; letter-spacing: 0.02em;
-  background: var(--sage); color: var(--tape-ink); transform: rotate(-4deg);
+  position: absolute; right: -22px; top: 26px; padding: 0.02em 0.22em 0.06em;
+  font-family: var(--display); font-size: clamp(3.2rem, 8vw, 6.5rem); line-height: 1; letter-spacing: 0.02em;
+  background: var(--sage); color: var(--tape-ink); transform: rotate(4deg);
   clip-path: polygon(0 6%, 3% 0, 97% 3%, 100% 10%, 99% 92%, 96% 100%, 2% 97%, 0 90%);
   box-shadow: var(--card-shadow);
 }
-@media (max-width: 860px) { .not-found-code { left: -8px; bottom: 16px; } }
+/* The photo's subject is the person on the bottom, so the wide phone crop keeps the lower part. */
+.not-found .hero-photo img { object-position: center 75%; }
+@media (max-width: 860px) { .not-found-code { right: -8px; top: 14px; } }
 
 .visit { text-align: center; }
 .visit .section-head { justify-items: center; }
