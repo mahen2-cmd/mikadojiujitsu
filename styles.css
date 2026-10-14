@@ -565,6 +565,13 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 
 /* --- Visit and footer ------------------------------------------------------ */
 
+.not-found { display: grid; gap: 22px; justify-items: start; padding-top: clamp(64px, 10vw, 128px); }
+.not-found > * { margin-left: 0; }
+.not-found h1 { max-width: 14ch; }
+.not-found-links { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); width: 100%; }
+.not-found-links h2 { font-size: 1.1rem; margin-bottom: 12px; }
+.not-found-links ul { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+
 .visit { text-align: center; }
 .visit .section-head { justify-items: center; }
 .visit .actions { justify-content: center; }
