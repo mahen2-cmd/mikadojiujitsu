@@ -157,6 +157,16 @@ function initNextClass(badge) {
   setInterval(show, 60 * 1000);
 }
 
+// The banner's boot script already removed it if it has expired or was closed.
+function initAnnouncement(banner) {
+  const button = banner.querySelector('[data-announcement-close]');
+  button.addEventListener('click', () => {
+    try { localStorage.setItem('announcement-closed', banner.dataset.announcement); } catch { /* private mode: closes for now */ }
+    banner.remove();
+  });
+  button.hidden = false;
+}
+
 function initThemeToggle(button) {
   const root = document.documentElement;
   const current = () => (root.dataset.theme === 'dark' ? 'dark' : 'light');
@@ -188,6 +198,7 @@ function countContactTaps(page) {
 if (typeof document !== 'undefined') {
   countContactTaps(pageName(location.pathname));
   document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
+  document.querySelectorAll('[data-announcement]').forEach(initAnnouncement);
   const today = lahoreToday(new Date());
   document.querySelectorAll('[data-schedule]').forEach((root) => initSchedule(root, today.day));
   markEvents(document.querySelectorAll('[data-event-date]'), today.iso);
