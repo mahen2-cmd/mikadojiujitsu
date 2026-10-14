@@ -565,12 +565,15 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 
 /* --- Visit and footer ------------------------------------------------------ */
 
-.not-found { display: grid; gap: 22px; justify-items: start; padding-top: clamp(64px, 10vw, 128px); }
-.not-found > * { margin-left: 0; }
-.not-found h1 { max-width: 14ch; }
-.not-found-links { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); width: 100%; }
-.not-found-links h2 { font-size: 1.1rem; margin-bottom: 12px; }
-.not-found-links ul { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+/* The not-found page: a big taped "404" over the hero photo. */
+.not-found-code {
+  position: absolute; left: -22px; bottom: 28px; padding: 0.02em 0.22em 0.06em;
+  font-family: var(--display); font-size: clamp(4rem, 11vw, 8.5rem); line-height: 1; letter-spacing: 0.02em;
+  background: var(--sage); color: var(--tape-ink); transform: rotate(-4deg);
+  clip-path: polygon(0 6%, 3% 0, 97% 3%, 100% 10%, 99% 92%, 96% 100%, 2% 97%, 0 90%);
+  box-shadow: var(--card-shadow);
+}
+@media (max-width: 860px) { .not-found-code { left: -8px; bottom: 16px; } }
 
 .visit { text-align: center; }
 .visit .section-head { justify-items: center; }
