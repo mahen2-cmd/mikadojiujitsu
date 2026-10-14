@@ -184,7 +184,7 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
   text-decoration: none; color: var(--ink); white-space: nowrap;
 }
-.logo-mark { width: 46px; height: auto; flex: none; }
+.logo-mark { width: 64px; height: auto; flex: none; }
 
 .site-nav { display: flex; gap: clamp(12px, 2.2vw, 28px); margin-left: auto; }
 .site-nav a {
