@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mikado Jiu Jitsu//Seminars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guard-passing-with-naqi-arshed@mikadojiujitsu.com
+DTSTAMP:20250713T080000Z
+DTSTART:20250713T080000Z
+DTEND:20250713T100000Z
+SUMMARY:Guard Passing with Naqi Arshed
+DESCRIPTION:A donation-based seminar with the UK-based black belt\, with ev
+ ery rupee going to support the athlete.\n\nhttps://mikadojiujitsu.com/guar
+ d-passing-with-naqi-arshed.html
+LOCATION:Mikado Jiu Jitsu\, 180\, DD CCA DD\, DHA Phase 4 Sector CCA\, Laho
+ re 54000\, Pakistan
+URL:https://mikadojiujitsu.com/guard-passing-with-naqi-arshed.html
+END:VEVENT
+END:VCALENDAR

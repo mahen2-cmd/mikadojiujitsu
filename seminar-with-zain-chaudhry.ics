@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mikado Jiu Jitsu//Seminars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seminar-with-zain-chaudhry@mikadojiujitsu.com
+DTSTAMP:20251123T080000Z
+DTSTART:20251123T080000Z
+DTEND:20251123T100000Z
+SUMMARY:Seminar with Zain Chaudhry
+DESCRIPTION:The 2025 IBJJF Grand Slam champion on the berimbolo. All procee
+ ds went towards building a water well in rural Sindh.\n\nhttps://mikadojiu
+ jitsu.com/seminar-with-zain-chaudhry.html
+LOCATION:Mikado Jiu Jitsu\, 180\, DD CCA DD\, DHA Phase 4 Sector CCA\, Laho
+ re 54000\, Pakistan
+URL:https://mikadojiujitsu.com/seminar-with-zain-chaudhry.html
+END:VEVENT
+END:VCALENDAR

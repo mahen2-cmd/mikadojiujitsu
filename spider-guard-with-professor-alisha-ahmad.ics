@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mikado Jiu Jitsu//Seminars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spider-guard-with-professor-alisha-ahmad@mikadojiujitsu.com
+DTSTAMP:20260627T070000Z
+DTSTART:20260627T070000Z
+DTEND:20260627T090000Z
+SUMMARY:Spider Guard with Professor Alisha Ahmad
+DESCRIPTION:A pioneer of Brazilian Jiu Jitsu in Pakistan and founder of Car
+ lson Gracie Karachi\, sharing his spider guard setups\, sweeps and details
+ .\n\nhttps://mikadojiujitsu.com/spider-guard-with-professor-alisha-ahmad.h
+ tml
+LOCATION:Mikado Jiu Jitsu\, 180\, DD CCA DD\, DHA Phase 4 Sector CCA\, Laho
+ re 54000\, Pakistan
+URL:https://mikadojiujitsu.com/spider-guard-with-professor-alisha-ahmad.htm
+ l
+END:VEVENT
+END:VCALENDAR

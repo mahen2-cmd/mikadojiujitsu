@@ -157,6 +157,18 @@ function initNextClass(badge) {
   setInterval(show, 60 * 1000);
 }
 
+// "Add to calendar" menus close on a tap elsewhere or Escape, like other menus.
+function closeCalendarMenus() {
+  const openMenus = () => document.querySelectorAll('details.add-calendar[open]');
+  document.addEventListener('click', (event) => {
+    openMenus().forEach((menu) => { if (!menu.contains(event.target)) menu.open = false; });
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    openMenus().forEach((menu) => { menu.open = false; menu.querySelector('summary').focus(); });
+  });
+}
+
 // The banner's boot script already removed it if it has expired or was closed.
 function initAnnouncement(banner) {
   const button = banner.querySelector('[data-announcement-close]');
@@ -199,6 +211,7 @@ if (typeof document !== 'undefined') {
   countContactTaps(pageName(location.pathname));
   document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
   document.querySelectorAll('[data-announcement]').forEach(initAnnouncement);
+  closeCalendarMenus();
   const today = lahoreToday(new Date());
   document.querySelectorAll('[data-schedule]').forEach((root) => initSchedule(root, today.day));
   markEvents(document.querySelectorAll('[data-event-date]'), today.iso);

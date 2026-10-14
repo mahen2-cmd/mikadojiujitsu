@@ -567,7 +567,23 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .event.is-past { opacity: 0.86; }
 .event-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 6px; }
 .event.is-upcoming .text-link { color: var(--accent); }
-.is-past .event-register { display: none; }
+.is-past .event-register, .is-past .add-calendar { display: none; }
+
+/* "Add to calendar": a button that opens a two-item menu, no script needed. */
+.add-calendar { position: relative; }
+.add-calendar summary {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; list-style: none; cursor: pointer;
+  border: 2px solid var(--accent); border-radius: 999px; font-weight: 600; color: var(--accent);
+}
+.add-calendar summary::-webkit-details-marker { display: none; }
+.add-calendar summary::after { content: '▾'; font-size: 0.8em; }
+.add-calendar[open] summary, .add-calendar summary:hover { background: var(--accent); color: var(--on-accent); }
+.add-calendar-menu {
+  position: absolute; z-index: 5; top: calc(100% + 8px); left: 0; display: grid; min-width: 210px; padding: 6px;
+  background: var(--surface-raised); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--card-shadow);
+}
+.add-calendar-menu a { padding: 10px 14px; border-radius: 10px; font-weight: 600; color: var(--heading); text-decoration: none; }
+.add-calendar-menu a:hover, .add-calendar-menu a:focus-visible { background: var(--band-sage); }
 
 /* --- Seminar pages ---------------------------------------------------------- */
 

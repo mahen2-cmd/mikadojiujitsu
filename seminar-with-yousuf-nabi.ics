@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mikado Jiu Jitsu//Seminars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seminar-with-yousuf-nabi@mikadojiujitsu.com
+DTSTAMP:20261024T080000Z
+DTSTART:20261024T080000Z
+DTEND:20261024T100000Z
+SUMMARY:Seminar with Yousuf Nabi
+DESCRIPTION:Active 3rd degree black belt and founder of Elements Martial Ar
+ ts. IBJJF Masters European champion\, ADCC Europe Masters champion\, 3× P
+ olaris champion and multiple-time AJP Grand Slam champion. Practical\, com
+ petition-tested techniques for all levels.\n\nhttps://mikadojiujitsu.com/s
+ eminar-with-yousuf-nabi.html
+LOCATION:Mikado Jiu Jitsu\, 180\, DD CCA DD\, DHA Phase 4 Sector CCA\, Laho
+ re 54000\, Pakistan
+URL:https://mikadojiujitsu.com/seminar-with-yousuf-nabi.html
+END:VEVENT
+END:VCALENDAR

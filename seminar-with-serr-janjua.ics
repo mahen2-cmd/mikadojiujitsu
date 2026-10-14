@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mikado Jiu Jitsu//Seminars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seminar-with-serr-janjua@mikadojiujitsu.com
+DTSTAMP:20260822T080000Z
+DTSTART:20260822T080000Z
+DTEND:20260822T100000Z
+SUMMARY:Seminar with Serr Janjua
+DESCRIPTION:1st degree black belt under Paulo Peixoto\, BJJ professor at Si
+ O Oslo and an active IBJJF competitor\, giving back to the Pakistani BJJ c
+ ommunity.\n\nhttps://mikadojiujitsu.com/seminar-with-serr-janjua.html
+LOCATION:Mikado Jiu Jitsu\, 180\, DD CCA DD\, DHA Phase 4 Sector CCA\, Laho
+ re 54000\, Pakistan
+URL:https://mikadojiujitsu.com/seminar-with-serr-janjua.html
+END:VEVENT
+END:VCALENDAR
