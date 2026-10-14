@@ -541,6 +541,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .event.is-upcoming .event-when { color: var(--label); }
 .event.is-upcoming .event-fees { color: var(--heading); }
 .event.is-past { opacity: 0.86; }
+.event-register { justify-self: start; margin-top: 6px; }
+.event.is-past .event-register { display: none; }
 .badge {
   justify-self: start; padding: 4px 10px; border-radius: 999px; background: var(--sage);
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy-deep);
