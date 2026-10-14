@@ -192,6 +192,7 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
   padding: 6px 0; border-bottom: 2px solid transparent;
 }
 .site-nav a:hover { border-bottom-color: var(--sage); }
+.site-nav a[aria-current='page'] { border-bottom-color: var(--accent); font-weight: 600; }
 
 /* The toggle stays hidden until app.js can make it work. */
 .theme-toggle {
@@ -427,6 +428,73 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .testimonial figcaption { align-self: end; font-size: 0.88rem; color: var(--ink-soft); }
 .testimonial figcaption strong { color: var(--heading); }
 
+/* --- Results -------------------------------------------------------------- */
+
+.results { display: grid; gap: 22px; }
+.result-headline {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); overflow: hidden;
+  background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+.result-photo img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.result-body { display: grid; gap: 14px; align-content: center; padding: clamp(24px, 4vw, 48px); }
+.result-event { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--label); }
+.result-place { font-size: 1.1rem; color: var(--ink-soft); }
+.result-place strong {
+  display: block; font: 400 clamp(4rem, 9vw, 6.5rem)/0.9 var(--display); color: var(--heading);
+}
+.medals { display: flex; flex-wrap: wrap; gap: 10px; }
+.medal {
+  display: inline-flex; align-items: baseline; gap: 6px; padding: 8px 16px; border-radius: 999px;
+  font-size: 0.85rem; font-weight: 600; color: #1d2433;
+}
+.medal strong { font: 400 1.5rem/1 var(--display); }
+.medal-gold { background: #f2d36b; }
+.medal-silver { background: #d5dae2; }
+.medal-bronze { background: #e3b48a; }
+.result-body > p:not([class]) { color: var(--ink-soft); max-width: 52ch; }
+.result-squad { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+
+.result-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.result-item {
+  display: grid; gap: 6px; align-content: start; padding: 20px;
+  background: var(--surface-raised); border: 1px solid var(--line); border-radius: 14px;
+}
+.result-item h3 { font-family: var(--display); font-weight: 400; font-size: 1.35rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.result-item p:last-child { font-size: 0.92rem; color: var(--ink-soft); }
+.result-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 600; color: var(--label); }
+.result-badge { padding: 3px 10px; border-radius: 999px; background: var(--sage); color: var(--navy-deep); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+@media (max-width: 760px) {
+  .result-headline { grid-template-columns: 1fr; }
+  .result-photo img { aspect-ratio: 4 / 3; }
+}
+
+/* --- Kids page ------------------------------------------------------------- */
+
+.kids-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 22px; align-items: start; }
+.kids-layout .price-grid { grid-template-columns: 1fr; }
+.kids-classes { display: grid; gap: 14px; }
+.kids-class {
+  display: grid; gap: 4px; padding: 22px 24px;
+  background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--sage);
+  border-radius: 14px; box-shadow: var(--card-shadow);
+}
+.kids-class h3 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.kids-class-name { font-weight: 600; color: var(--ink); }
+.kids-class-when { font-weight: 600; color: var(--label); font-variant-numeric: tabular-nums; }
+
+.kids-competing { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 56px); align-items: center; }
+.kids-podium img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+.kids-competing-copy { display: grid; gap: 16px; justify-items: start; }
+.kids-competing-copy p:not(.lead) { color: #c3cee0; max-width: 60ch; }
+.section-navy .text-link { color: var(--sage); }
+
+@media (max-width: 860px) {
+  .kids-layout, .kids-competing { grid-template-columns: 1fr; }
+  .kids-podium { max-width: 360px; }
+}
+
 /* --- Events ---------------------------------------------------------------- */
 
 .events { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
@@ -461,6 +529,25 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .visit { text-align: center; }
 .visit .section-head { justify-items: center; }
 .visit .actions { justify-content: center; }
+
+.visit-map {
+  display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: stretch;
+  margin-top: clamp(32px, 5vw, 48px); overflow: hidden; text-align: left;
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--card-shadow);
+}
+.visit-map address {
+  display: grid; align-content: center; gap: 4px; padding: clamp(24px, 4vw, 40px);
+  font-style: normal; line-height: 1.6; color: var(--ink-soft);
+}
+.visit-map address strong {
+  font-family: var(--display); font-weight: 400; font-size: 1.6rem; letter-spacing: 0.02em;
+  text-transform: uppercase; color: var(--heading);
+}
+.visit-map iframe { display: block; width: 100%; min-height: 320px; height: 100%; border: 0; }
+@media (max-width: 760px) {
+  .visit-map { grid-template-columns: 1fr; }
+  .visit-map iframe { min-height: 260px; }
+}
 
 .site-footer {
   display: grid; gap: 10px; justify-items: center; text-align: center;
