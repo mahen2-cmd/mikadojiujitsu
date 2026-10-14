@@ -300,6 +300,14 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .program-body h3 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; letter-spacing: 0.02em; text-transform: uppercase; }
 .program-when { font-size: 0.85rem; font-weight: 600; color: var(--label); }
 .program-body .text-link { margin-top: auto; padding-top: 6px; }
+.program-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
+.program-wide .program-photo img { height: 100%; aspect-ratio: auto; min-height: 260px; }
+.program-wide .program-body { padding: clamp(22px, 4vw, 40px); align-content: center; }
+.program-wide .program-body > p:not(.program-when) { max-width: 52ch; }
+@media (max-width: 640px) {
+  .program-wide { grid-template-columns: 1fr; }
+  .program-wide .program-photo img { aspect-ratio: 4 / 3; min-height: 0; }
+}
 
 /* --- Values ---------------------------------------------------------------- */
 
@@ -510,6 +518,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 }
 .class-slot h3 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; letter-spacing: 0.02em; text-transform: uppercase; }
 .class-slot-name { font-weight: 600; color: var(--ink); }
+.class-slot-book { justify-self: start; margin-top: 10px; }
 .class-slot-when { font-weight: 600; color: var(--label); font-variant-numeric: tabular-nums; }
 
 .kids-competing { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 56px); align-items: center; }
