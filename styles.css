@@ -550,8 +550,27 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .event.is-upcoming .event-when { color: var(--label); }
 .event.is-upcoming .event-fees { color: var(--heading); }
 .event.is-past { opacity: 0.86; }
-.event-register { justify-self: start; margin-top: 6px; }
-.event.is-past .event-register { display: none; }
+.event-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 6px; }
+.event.is-upcoming .text-link { color: var(--accent); }
+.is-past .event-register { display: none; }
+
+/* --- Seminar pages ---------------------------------------------------------- */
+
+.seminar-hero .tape { white-space: normal; }
+/* Posters carry their own text, so they keep their 4:5 shape on phones too. */
+.seminar-hero .hero-photo img { aspect-ratio: 4 / 5; }
+.seminar-past-note { display: none; font-weight: 600; color: var(--heading); }
+.is-past .seminar-past-note { display: block; }
+.seminar-about { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: clamp(24px, 5vw, 56px); align-items: start; }
+.seminar-bio { display: grid; gap: 16px; max-width: 65ch; font-size: 1.05rem; color: var(--ink); }
+.seminar-highlights {
+  padding: 26px; background: var(--surface-raised); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--card-shadow);
+}
+.seminar-highlights h3 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 10px; }
+.seminar-highlights li { padding: 10px 0; border-bottom: 1px solid var(--line); font-weight: 500; }
+.seminar-highlights li:last-child { border-bottom: 0; }
+@media (max-width: 860px) { .seminar-about { grid-template-columns: 1fr; } }
 .badge {
   justify-self: start; padding: 4px 10px; border-radius: 999px; background: var(--sage);
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy-deep);
