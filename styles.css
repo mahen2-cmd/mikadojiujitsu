@@ -43,38 +43,7 @@
   --body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Dark mode follows the system unless the visitor picked a theme (app.js). */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-    --ink: #e8e3d6;
-    --ink-soft: #a3adbf;
-    --line: rgba(232, 227, 214, 0.12);
-
-    --bg: #0b1220;
-    --surface: #121c2e;
-    --surface-raised: #17233a;
-    --heading: #f4efe4;
-    --accent: #9fc89a;
-    --accent-hover: #b7d9b2;
-    --on-accent: #0c2140;
-    --label: #8fbf8a;
-    --tape-ink: var(--navy-deep);
-    --band-sage: #12211d;
-    --band-navy: #0f2747;
-    --footer-bg: #070c16;
-    --header-bg: rgba(11, 18, 32, 0.78);
-    --photo-block: #2c4a35;
-    --feature-bg: rgba(255, 255, 255, 0.07);
-    --feature-border: rgba(159, 200, 154, 0.45);
-    --card-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.7);
-    --hero-glow: radial-gradient(60% 55% at 85% 20%, rgba(143, 181, 140, 0.14), transparent 70%),
-      radial-gradient(50% 50% at 0% 0%, rgba(38, 76, 135, 0.28), transparent 70%);
-    --photo-filter: brightness(0.92) saturate(0.95);
-    --icon-moon: none;
-    --icon-sun: inline;
-  }
-}
+/* Light by default; dark only when the visitor picks it (app.js). */
 :root[data-theme='dark'] {
   color-scheme: dark;
   --ink: #e8e3d6;
