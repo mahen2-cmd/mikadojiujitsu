@@ -431,6 +431,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 /* --- Testimonials ---------------------------------------------------------- */
 
 .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.review-ask { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 22px; margin-top: 32px; text-align: center; }
+.review-ask p { font-weight: 600; color: var(--heading); }
 .testimonial figure {
   display: grid; gap: 14px; height: 100%; padding: 26px;
   background: var(--surface); border-radius: var(--radius); box-shadow: var(--card-shadow);

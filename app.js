@@ -79,6 +79,7 @@ function contactKind(href) {
   if (href.startsWith('tel:')) return 'call';
   if (href.startsWith('https://www.instagram.com/')) return 'instagram';
   if (href.startsWith('https://maps.app.goo.gl/')) return 'directions';
+  if (href.includes('#lrd=') || href.startsWith('https://g.page/r/')) return 'review';
   return null;
 }
 
@@ -89,7 +90,7 @@ function pageName(pathname) {
 }
 
 const CONTACT_LABELS = {
-  whatsapp: 'WhatsApp', call: 'Call', instagram: 'Instagram', directions: 'Directions',
+  whatsapp: 'WhatsApp', call: 'Call', instagram: 'Instagram', directions: 'Directions', review: 'Google review',
 };
 
 // --- Page wiring -----------------------------------------------------------
