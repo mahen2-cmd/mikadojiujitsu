@@ -379,6 +379,54 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .founder { position: static; max-width: 420px; }
 }
 
+/* --- First class FAQ ------------------------------------------------------ */
+
+.faq { display: grid; gap: 12px; }
+.faq-item {
+  max-width: 860px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--card-shadow);
+}
+.faq-item summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 18px 22px; cursor: pointer; list-style: none;
+  font-weight: 600; color: var(--heading);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; flex: none; font: 400 1.6rem/1 var(--body); color: var(--label);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 22px 20px; color: var(--ink-soft); max-width: 70ch; }
+
+/* --- Coaches --------------------------------------------------------------- */
+
+.coaches { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.coach {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+.coach-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.coach-body { display: grid; gap: 6px; padding: 22px; align-content: start; }
+.coach-body h3 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.coach-role { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--label); }
+.coach-belt { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.coach-body p:last-child { color: var(--ink-soft); }
+
+/* --- Testimonials ---------------------------------------------------------- */
+
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.testimonial figure {
+  display: grid; gap: 14px; height: 100%; padding: 26px;
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--card-shadow);
+}
+.testimonial blockquote { margin: 0; }
+.testimonial blockquote p { color: var(--ink); line-height: 1.55; }
+.testimonial blockquote p::before { content: '“'; display: block; height: 0.7em; font: 400 3rem/1 var(--display); color: var(--sage); }
+.testimonial figcaption { align-self: end; font-size: 0.88rem; color: var(--ink-soft); }
+.testimonial figcaption strong { color: var(--heading); }
+
 /* --- Events ---------------------------------------------------------------- */
 
 .events { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
