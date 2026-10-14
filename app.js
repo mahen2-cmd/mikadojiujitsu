@@ -32,6 +32,16 @@ function neighbourDay(days, current, key) {
   }
 }
 
+// A saved choice wins; otherwise follow the system setting.
+function resolveTheme(saved, systemPrefersDark) {
+  if (saved === 'light' || saved === 'dark') return saved;
+  return systemPrefersDark ? 'dark' : 'light';
+}
+
+function otherTheme(theme) {
+  return theme === 'dark' ? 'light' : 'dark';
+}
+
 // --- Page wiring -----------------------------------------------------------
 
 function initSchedule(root, today) {
@@ -77,12 +87,32 @@ function markEvents(items, todayIso) {
   });
 }
 
+function initThemeToggle(button) {
+  const root = document.documentElement;
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const current = () => resolveTheme(root.dataset.theme, systemDark.matches);
+  const label = () => button.setAttribute('aria-label', `Switch to ${otherTheme(current())} mode`);
+
+  button.addEventListener('click', () => {
+    const next = otherTheme(current());
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch { /* private mode: still switches */ }
+    label();
+  });
+  systemDark.addEventListener('change', label);
+  label();
+  button.hidden = false;
+}
+
 if (typeof document !== 'undefined') {
+  document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
   const today = lahoreToday(new Date());
   document.querySelectorAll('[data-schedule]').forEach((root) => initSchedule(root, today.day));
   markEvents(document.querySelectorAll('[data-event-date]'), today.iso);
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { lahoreToday, defaultScheduleDay, eventStatus, neighbourDay };
+  module.exports = {
+    lahoreToday, defaultScheduleDay, eventStatus, neighbourDay, resolveTheme, otherTheme,
+  };
 }
