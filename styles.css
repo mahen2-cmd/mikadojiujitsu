@@ -547,22 +547,6 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .kids-podium { max-width: 360px; }
 }
 
-/* --- Mikado family ---------------------------------------------------------- */
-
-.spotlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
-.spotlight {
-  display: flex; flex-direction: column; overflow: hidden;
-  background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--card-shadow);
-}
-.spotlight-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.spotlight-body { display: grid; gap: 6px; padding: 22px; align-content: start; }
-.spotlight-when { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); }
-.spotlight-body h3 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; }
-.spotlight-tagline { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
-.spotlight-body p:last-child { color: var(--ink-soft); }
-.family-intro { padding-bottom: clamp(24px, 4vw, 40px); }
-.journey-year time { white-space: nowrap; }
-
 /* --- Gallery page ----------------------------------------------------------- */
 
 .gallery-intro { padding-bottom: 0; }
@@ -649,7 +633,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .journey-body h3 { font-size: 1.15rem; }
 .journey-body > p { max-width: 62ch; color: var(--ink-soft); }
 .journey-photo { margin-top: 10px; width: min(100%, 460px); }
-.journey-photo img { display: block; width: auto; max-width: 100%; height: auto; max-height: 520px; border-radius: 14px; box-shadow: var(--card-shadow); }
+.journey-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; box-shadow: var(--card-shadow); }
 @media (max-width: 640px) {
   .journey-step { grid-template-columns: 1fr; gap: 6px; padding-left: 26px; }
   .journey-step::before { left: 5px; }
