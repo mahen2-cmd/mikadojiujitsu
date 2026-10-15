@@ -15,9 +15,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#12305b">
   <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -33,7 +32,7 @@
   <script>(function(b){try{var t=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Karachi'}).format(new Date());if((b.dataset.until&&t>b.dataset.until)||localStorage.getItem('announcement-closed')===b.dataset.announcement)b.remove()}catch(e){}})(document.currentScript.previousElementSibling)</script>
 
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Mikado Jiu Jitsu — home">
+    <a class="brand" href="./" aria-label="Mikado Jiujitsu — home">
     <svg class="logo-mark" viewBox="47 83 344 177" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="6" stroke-miterlimit="10">
       <path d="M140 255H53.5L148.3 91.5 242.7 255H225"/><path d="M232 191.5 289.4 91.7 384 255H301"/>
     </svg>
@@ -87,7 +86,7 @@
           
         </ul>
       </div>
-      <div class="hero-photo"><img src="images/seminar-zain-chaudhry.jpg" alt="Seminar poster: Zain Chaudhry, IBJJF Grand Slam champion, holding his 2025 gold medals" width="1000" height="1251" fetchpriority="high"></div>
+      <div class="hero-photo"><picture><source type="image/webp" srcset="_img/seminar-zain-chaudhry-480.webp 480w, _img/seminar-zain-chaudhry-960.webp 960w, _img/seminar-zain-chaudhry-1000.webp 1000w" sizes="(max-width: 860px) 100vw, 45vw"><img src="images/seminar-zain-chaudhry.jpg" alt="Seminar poster: Zain Chaudhry, IBJJF Grand Slam champion, holding his 2025 gold medals" width="1000" height="1251" fetchpriority="high"></picture></div>
     </section>
 
     <section class="section section-navy" id="events">

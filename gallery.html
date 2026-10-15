@@ -15,9 +15,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#12305b">
   <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -33,7 +32,7 @@
   <script>(function(b){try{var t=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Karachi'}).format(new Date());if((b.dataset.until&&t>b.dataset.until)||localStorage.getItem('announcement-closed')===b.dataset.announcement)b.remove()}catch(e){}})(document.currentScript.previousElementSibling)</script>
 
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Mikado Jiu Jitsu — home">
+    <a class="brand" href="./" aria-label="Mikado Jiujitsu — home">
     <svg class="logo-mark" viewBox="47 83 344 177" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="6" stroke-miterlimit="10">
       <path d="M140 255H53.5L148.3 91.5 242.7 255H225"/><path d="M232 191.5 289.4 91.7 384 255H301"/>
     </svg>
@@ -80,109 +79,109 @@
     <section class="section photo-section">
       <ul class="photo-grid" data-gallery>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-01.jpg" data-caption="Two members drilling from guard in white gis"><img src="images/gallery/adults-01.jpg" alt="Two members drilling from guard in white gis" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-01.jpg" data-caption="Two members drilling from guard in white gis"><picture><source type="image/webp" srcset="_img/gallery/adults-01-480.webp 480w, _img/gallery/adults-01-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-01.jpg" alt="Two members drilling from guard in white gis" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-02.jpg" data-caption="A coach showing a grip to a student during a Gi class"><img src="images/gallery/adults-02.jpg" alt="A coach showing a grip to a student during a Gi class" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-02.jpg" data-caption="A coach showing a grip to a student during a Gi class"><picture><source type="image/webp" srcset="_img/gallery/adults-02-480.webp 480w, _img/gallery/adults-02-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-02.jpg" alt="A coach showing a grip to a student during a Gi class" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-03.jpg" data-caption="A member resting against the wall beneath the Brazilian flag between rounds"><img src="images/gallery/adults-03.jpg" alt="A member resting against the wall beneath the Brazilian flag between rounds" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-03.jpg" data-caption="A member resting against the wall beneath the Brazilian flag between rounds"><picture><source type="image/webp" srcset="_img/gallery/adults-03-480.webp 480w, _img/gallery/adults-03-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-03.jpg" alt="A member resting against the wall beneath the Brazilian flag between rounds" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-04.jpg" data-caption="Pairs rolling across the mats during a Gi class"><img src="images/gallery/adults-04.jpg" alt="Pairs rolling across the mats during a Gi class" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-04.jpg" data-caption="Pairs rolling across the mats during a Gi class"><picture><source type="image/webp" srcset="_img/gallery/adults-04-480.webp 480w, _img/gallery/adults-04-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-04.jpg" alt="Pairs rolling across the mats during a Gi class" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-05.jpg" data-caption="A member watching a roll, with the Mikado logo on the wall behind"><img src="images/gallery/adults-05.jpg" alt="A member watching a roll, with the Mikado logo on the wall behind" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-05.jpg" data-caption="A member watching a roll, with the Mikado logo on the wall behind"><picture><source type="image/webp" srcset="_img/gallery/adults-05-480.webp 480w, _img/gallery/adults-05-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-05.jpg" alt="A member watching a roll, with the Mikado logo on the wall behind" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-06.jpg" data-caption="A member attacking from guard with his partner’s leg held high"><img src="images/gallery/adults-06.jpg" alt="A member attacking from guard with his partner’s leg held high" width="905" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-06.jpg" data-caption="A member attacking from guard with his partner’s leg held high"><picture><source type="image/webp" srcset="_img/gallery/adults-06-480.webp 480w, _img/gallery/adults-06-905.webp 905w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-06.jpg" alt="A member attacking from guard with his partner’s leg held high" width="905" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-07.jpg" data-caption="Partners working on the ground while a black belt walks the room · Photo: @jalal.shahid"><img src="images/gallery/adults-07.jpg" alt="Partners working on the ground while a black belt walks the room" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-07.jpg" data-caption="Partners working on the ground while a black belt walks the room · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/adults-07-480.webp 480w, _img/gallery/adults-07-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-07.jpg" alt="Partners working on the ground while a black belt walks the room" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-08.jpg" data-caption="Two women grappling in the gi, one passing the other’s guard · Photo: @jalal.shahid"><img src="images/gallery/adults-08.jpg" alt="Two women grappling in the gi, one passing the other’s guard" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-08.jpg" data-caption="Two women grappling in the gi, one passing the other’s guard · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/adults-08-480.webp 480w, _img/gallery/adults-08-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-08.jpg" alt="Two women grappling in the gi, one passing the other’s guard" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-09.jpg" data-caption="A woman drilling a grip while her training partners look on · Photo: @jalal.shahid"><img src="images/gallery/adults-09.jpg" alt="A woman drilling a grip while her training partners look on" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-09.jpg" data-caption="A woman drilling a grip while her training partners look on · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/adults-09-480.webp 480w, _img/gallery/adults-09-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-09.jpg" alt="A woman drilling a grip while her training partners look on" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-10.jpg" data-caption="Two members scrambling on the mats, with another pair rolling behind them · Photo: @jalal.shahid"><img src="images/gallery/adults-10.jpg" alt="Two members scrambling on the mats, with another pair rolling behind them" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-10.jpg" data-caption="Two members scrambling on the mats, with another pair rolling behind them · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/adults-10-480.webp 480w, _img/gallery/adults-10-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-10.jpg" alt="Two members scrambling on the mats, with another pair rolling behind them" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-11.jpg" data-caption="A member pinned under his partner during a roll · Photo: @jalal.shahid"><img src="images/gallery/adults-11.jpg" alt="A member pinned under his partner during a roll" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-11.jpg" data-caption="A member pinned under his partner during a roll · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/adults-11-480.webp 480w, _img/gallery/adults-11-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-11.jpg" alt="A member pinned under his partner during a roll" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-12.jpg" data-caption="A coach watching a roll from the edge of the mat · Photo: @jalal.shahid"><img src="images/gallery/adults-12.jpg" alt="A coach watching a roll from the edge of the mat" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-12.jpg" data-caption="A coach watching a roll from the edge of the mat · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/adults-12-480.webp 480w, _img/gallery/adults-12-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-12.jpg" alt="A coach watching a roll from the edge of the mat" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-13.jpg" data-caption="Members rolling under the Palestinian and Brazilian flags"><img src="images/gallery/adults-13.jpg" alt="Members rolling under the Palestinian and Brazilian flags" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-13.jpg" data-caption="Members rolling under the Palestinian and Brazilian flags"><picture><source type="image/webp" srcset="_img/gallery/adults-13-480.webp 480w, _img/gallery/adults-13-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-13.jpg" alt="Members rolling under the Palestinian and Brazilian flags" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="adults">
-          <a class="photo-link" href="images/gallery/adults-14.jpg" data-caption="A member leaning over his partner during a roll"><img src="images/gallery/adults-14.jpg" alt="A member leaning over his partner during a roll" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/adults-14.jpg" data-caption="A member leaning over his partner during a roll"><picture><source type="image/webp" srcset="_img/gallery/adults-14-480.webp 480w, _img/gallery/adults-14-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/adults-14.jpg" alt="A member leaning over his partner during a roll" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="kids">
-          <a class="photo-link" href="images/gallery/kids-01.jpg" data-caption="A boy in a blue gi holding his partner down in kids class"><img src="images/gallery/kids-01.jpg" alt="A boy in a blue gi holding his partner down in kids class" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/kids-01.jpg" data-caption="A boy in a blue gi holding his partner down in kids class"><picture><source type="image/webp" srcset="_img/gallery/kids-01-480.webp 480w, _img/gallery/kids-01-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/kids-01.jpg" alt="A boy in a blue gi holding his partner down in kids class" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="kids">
-          <a class="photo-link" href="images/gallery/kids-02.jpg" data-caption="Kids laughing as they practise on the mats, with classmates watching"><img src="images/gallery/kids-02.jpg" alt="Kids laughing as they practise on the mats, with classmates watching" width="960" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/kids-02.jpg" data-caption="Kids laughing as they practise on the mats, with classmates watching"><picture><source type="image/webp" srcset="_img/gallery/kids-02-480.webp 480w, _img/gallery/kids-02-960.webp 960w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/kids-02.jpg" alt="Kids laughing as they practise on the mats, with classmates watching" width="960" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="kids">
-          <a class="photo-link" href="images/gallery/kids-03.jpg" data-caption="A line of kids in white gis standing ready at the start of class"><img src="images/gallery/kids-03.jpg" alt="A line of kids in white gis standing ready at the start of class" width="640" height="1136" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/kids-03.jpg" data-caption="A line of kids in white gis standing ready at the start of class"><picture><source type="image/webp" srcset="_img/gallery/kids-03-480.webp 480w, _img/gallery/kids-03-640.webp 640w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/kids-03.jpg" alt="A line of kids in white gis standing ready at the start of class" width="640" height="1136" loading="lazy"></picture></a>
         </li>
         <li data-category="kids">
-          <a class="photo-link" href="images/gallery/kids-04.jpg" data-caption="A boy driving forward to pass his partner’s guard"><img src="images/gallery/kids-04.jpg" alt="A boy driving forward to pass his partner’s guard" width="640" height="1136" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/kids-04.jpg" data-caption="A boy driving forward to pass his partner’s guard"><picture><source type="image/webp" srcset="_img/gallery/kids-04-480.webp 480w, _img/gallery/kids-04-640.webp 640w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/kids-04.jpg" alt="A boy driving forward to pass his partner’s guard" width="640" height="1136" loading="lazy"></picture></a>
         </li>
         <li data-category="kids">
-          <a class="photo-link" href="images/gallery/kids-05.jpg" data-caption="The kids class sitting together with their coaches after training"><img src="images/gallery/kids-05.jpg" alt="The kids class sitting together with their coaches after training" width="676" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/kids-05.jpg" data-caption="The kids class sitting together with their coaches after training"><picture><source type="image/webp" srcset="_img/gallery/kids-05-480.webp 480w, _img/gallery/kids-05-676.webp 676w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/kids-05.jpg" alt="The kids class sitting together with their coaches after training" width="676" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="competition">
-          <a class="photo-link" href="images/gallery/competition-01.jpg" data-caption="Two athletes squaring up at the start of a match at Grappling Industries Kuala Lumpur"><img src="images/gallery/competition-01.jpg" alt="Two athletes squaring up at the start of a match at Grappling Industries Kuala Lumpur" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/competition-01.jpg" data-caption="Two athletes squaring up at the start of a match at Grappling Industries Kuala Lumpur"><picture><source type="image/webp" srcset="_img/gallery/competition-01-480.webp 480w, _img/gallery/competition-01-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/competition-01.jpg" alt="Two athletes squaring up at the start of a match at Grappling Industries Kuala Lumpur" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="competition">
-          <a class="photo-link" href="images/gallery/competition-02.jpg" data-caption="The referee raising Coach Amjad Khan’s hand after his win at Grappling Industries Kuala Lumpur"><img src="images/gallery/competition-02.jpg" alt="The referee raising Coach Amjad Khan’s hand after his win at Grappling Industries Kuala Lumpur" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/competition-02.jpg" data-caption="The referee raising Coach Amjad Khan’s hand after his win at Grappling Industries Kuala Lumpur"><picture><source type="image/webp" srcset="_img/gallery/competition-02-480.webp 480w, _img/gallery/competition-02-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/competition-02.jpg" alt="The referee raising Coach Amjad Khan’s hand after his win at Grappling Industries Kuala Lumpur" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="competition">
-          <a class="photo-link" href="images/gallery/competition-03.jpg" data-caption="A Mikado athlete fighting out of a submission at Grappling Industries Kuala Lumpur"><img src="images/gallery/competition-03.jpg" alt="A Mikado athlete fighting out of a submission at Grappling Industries Kuala Lumpur" width="676" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/competition-03.jpg" data-caption="A Mikado athlete fighting out of a submission at Grappling Industries Kuala Lumpur"><picture><source type="image/webp" srcset="_img/gallery/competition-03-480.webp 480w, _img/gallery/competition-03-676.webp 676w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/competition-03.jpg" alt="A Mikado athlete fighting out of a submission at Grappling Industries Kuala Lumpur" width="676" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="competition">
-          <a class="photo-link" href="images/gallery/competition-04.jpg" data-caption="A Mikado coach and a young athlete watching from the side of the mat in Kuala Lumpur"><img src="images/gallery/competition-04.jpg" alt="A Mikado coach and a young athlete watching from the side of the mat in Kuala Lumpur" width="640" height="1136" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/competition-04.jpg" data-caption="A Mikado coach and a young athlete watching from the side of the mat in Kuala Lumpur"><picture><source type="image/webp" srcset="_img/gallery/competition-04-480.webp 480w, _img/gallery/competition-04-640.webp 640w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/competition-04.jpg" alt="A Mikado coach and a young athlete watching from the side of the mat in Kuala Lumpur" width="640" height="1136" loading="lazy"></picture></a>
         </li>
         <li data-category="competition">
-          <a class="photo-link" href="images/gallery/competition-05.jpg" data-caption="Coach Hashim Ali attacking from guard on his way to gold in Kuala Lumpur"><img src="images/gallery/competition-05.jpg" alt="Coach Hashim Ali attacking from guard on his way to gold in Kuala Lumpur" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/competition-05.jpg" data-caption="Coach Hashim Ali attacking from guard on his way to gold in Kuala Lumpur"><picture><source type="image/webp" srcset="_img/gallery/competition-05-480.webp 480w, _img/gallery/competition-05-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/competition-05.jpg" alt="Coach Hashim Ali attacking from guard on his way to gold in Kuala Lumpur" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="competition">
-          <a class="photo-link" href="images/gallery/competition-06.jpg" data-caption="A celebration hug after Coach Hashim Ali’s gold medal match"><img src="images/gallery/competition-06.jpg" alt="A celebration hug after Coach Hashim Ali’s gold medal match" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/competition-06.jpg" data-caption="A celebration hug after Coach Hashim Ali’s gold medal match"><picture><source type="image/webp" srcset="_img/gallery/competition-06-480.webp 480w, _img/gallery/competition-06-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/competition-06.jpg" alt="A celebration hug after Coach Hashim Ali’s gold medal match" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="seminars">
-          <a class="photo-link" href="images/gallery/seminars-01.jpg" data-caption="Black belts in front of the Brazilian flag during Professor Alisha Ahmad’s spider guard seminar · Photo: @toogoodmedia_"><img src="images/gallery/seminars-01.jpg" alt="Black belts in front of the Brazilian flag during Professor Alisha Ahmad’s spider guard seminar" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/seminars-01.jpg" data-caption="Black belts in front of the Brazilian flag during Professor Alisha Ahmad’s spider guard seminar · Photo: @toogoodmedia_"><picture><source type="image/webp" srcset="_img/gallery/seminars-01-480.webp 480w, _img/gallery/seminars-01-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/seminars-01.jpg" alt="Black belts in front of the Brazilian flag during Professor Alisha Ahmad’s spider guard seminar" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="seminars">
-          <a class="photo-link" href="images/gallery/seminars-02.jpg" data-caption="Professor Alisha Ahmad explaining a technique during his spider guard seminar · Photo: @toogoodmedia_"><img src="images/gallery/seminars-02.jpg" alt="Professor Alisha Ahmad explaining a technique during his spider guard seminar" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/seminars-02.jpg" data-caption="Professor Alisha Ahmad explaining a technique during his spider guard seminar · Photo: @toogoodmedia_"><picture><source type="image/webp" srcset="_img/gallery/seminars-02-480.webp 480w, _img/gallery/seminars-02-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/seminars-02.jpg" alt="Professor Alisha Ahmad explaining a technique during his spider guard seminar" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="seminars">
-          <a class="photo-link" href="images/gallery/seminars-03.jpg" data-caption="A coach correcting a member’s position during a Gi class"><img src="images/gallery/seminars-03.jpg" alt="A coach correcting a member’s position during a Gi class" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/seminars-03.jpg" data-caption="A coach correcting a member’s position during a Gi class"><picture><source type="image/webp" srcset="_img/gallery/seminars-03-480.webp 480w, _img/gallery/seminars-03-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/seminars-03.jpg" alt="A coach correcting a member’s position during a Gi class" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="seminars">
-          <a class="photo-link" href="images/gallery/seminars-04.jpg" data-caption="Members in black gis lined up on grading day"><img src="images/gallery/seminars-04.jpg" alt="Members in black gis lined up on grading day" width="640" height="1136" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/seminars-04.jpg" data-caption="Members in black gis lined up on grading day"><picture><source type="image/webp" srcset="_img/gallery/seminars-04-480.webp 480w, _img/gallery/seminars-04-640.webp 640w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/seminars-04.jpg" alt="Members in black gis lined up on grading day" width="640" height="1136" loading="lazy"></picture></a>
         </li>
         <li data-category="community">
-          <a class="photo-link" href="images/gallery/community-01.jpg" data-caption="The whole Mikado family, adults and kids, together on the mats six months after the gym opened"><img src="images/gallery/community-01.jpg" alt="The whole Mikado family, adults and kids, together on the mats six months after the gym opened" width="1200" height="928" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/community-01.jpg" data-caption="The whole Mikado family, adults and kids, together on the mats six months after the gym opened"><picture><source type="image/webp" srcset="_img/gallery/community-01-480.webp 480w, _img/gallery/community-01-960.webp 960w, _img/gallery/community-01-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/community-01.jpg" alt="The whole Mikado family, adults and kids, together on the mats six months after the gym opened" width="1200" height="928" loading="lazy"></picture></a>
         </li>
         <li data-category="community">
-          <a class="photo-link" href="images/gallery/community-02.jpg" data-caption="Morning and evening members together in one group photo"><img src="images/gallery/community-02.jpg" alt="Morning and evening members together in one group photo" width="675" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/community-02.jpg" data-caption="Morning and evening members together in one group photo"><picture><source type="image/webp" srcset="_img/gallery/community-02-480.webp 480w, _img/gallery/community-02-675.webp 675w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/community-02.jpg" alt="Morning and evening members together in one group photo" width="675" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="community">
-          <a class="photo-link" href="images/gallery/community-03.jpg" data-caption="A Mikado gi with the gym’s name on the sleeve, gripped during a drill · Photo: @jalal.shahid"><img src="images/gallery/community-03.jpg" alt="A Mikado gi with the gym’s name on the sleeve, gripped during a drill" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/community-03.jpg" data-caption="A Mikado gi with the gym’s name on the sleeve, gripped during a drill · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/community-03-480.webp 480w, _img/gallery/community-03-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/community-03.jpg" alt="A Mikado gi with the gym’s name on the sleeve, gripped during a drill" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="community">
-          <a class="photo-link" href="images/gallery/community-04.jpg" data-caption="Hands gripping a sleeve of the Mikado gi · Photo: @jalal.shahid"><img src="images/gallery/community-04.jpg" alt="Hands gripping a sleeve of the Mikado gi" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/community-04.jpg" data-caption="Hands gripping a sleeve of the Mikado gi · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/community-04-480.webp 480w, _img/gallery/community-04-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/community-04.jpg" alt="Hands gripping a sleeve of the Mikado gi" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="community">
-          <a class="photo-link" href="images/gallery/community-05.jpg" data-caption="The back of the black Mikado gi, with MIKADO JIUJITSU across the shoulders · Photo: @jalal.shahid"><img src="images/gallery/community-05.jpg" alt="The back of the black Mikado gi, with MIKADO JIUJITSU across the shoulders" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/community-05.jpg" data-caption="The back of the black Mikado gi, with MIKADO JIUJITSU across the shoulders · Photo: @jalal.shahid"><picture><source type="image/webp" srcset="_img/gallery/community-05-480.webp 480w, _img/gallery/community-05-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/community-05.jpg" alt="The back of the black Mikado gi, with MIKADO JIUJITSU across the shoulders" width="900" height="1200" loading="lazy"></picture></a>
         </li>
         <li data-category="community">
-          <a class="photo-link" href="images/gallery/community-06.jpg" data-caption="A folded black gi and belt on the mat"><img src="images/gallery/community-06.jpg" alt="A folded black gi and belt on the mat" width="900" height="1200" loading="lazy"></a>
+          <a class="photo-link" href="images/gallery/community-06.jpg" data-caption="A folded black gi and belt on the mat"><picture><source type="image/webp" srcset="_img/gallery/community-06-480.webp 480w, _img/gallery/community-06-900.webp 900w" sizes="(max-width: 900px) 50vw, 400px"><img src="images/gallery/community-06.jpg" alt="A folded black gi and belt on the mat" width="900" height="1200" loading="lazy"></picture></a>
         </li>
       </ul>
       <p class="fine-print">Some photos by <a class="text-link" href="https://www.instagram.com/jalal.shahid/" target="_blank" rel="noopener">@jalal.shahid</a> and <a class="text-link" href="https://www.instagram.com/toogoodmedia_/" target="_blank" rel="noopener">@toogoodmedia_</a>.</p>

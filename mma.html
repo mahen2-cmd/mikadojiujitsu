@@ -15,9 +15,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#12305b">
   <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -33,7 +32,7 @@
   <script>(function(b){try{var t=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Karachi'}).format(new Date());if((b.dataset.until&&t>b.dataset.until)||localStorage.getItem('announcement-closed')===b.dataset.announcement)b.remove()}catch(e){}})(document.currentScript.previousElementSibling)</script>
 
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Mikado Jiu Jitsu — home">
+    <a class="brand" href="./" aria-label="Mikado Jiujitsu — home">
     <svg class="logo-mark" viewBox="47 83 344 177" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="6" stroke-miterlimit="10">
       <path d="M140 255H53.5L148.3 91.5 242.7 255H225"/><path d="M232 191.5 289.4 91.7 384 255H301"/>
     </svg>
@@ -66,7 +65,7 @@
         <p class="kicker">Mikado Jiu Jitsu · DHA Phase 4, Lahore</p>
         <h1>MMA classes <span class="tape">in Lahore</span></h1>
         <p class="hero-sub">Grappling for mixed martial arts, coached by professional MMA fighter Amjad Khan and built on the same technical foundation as the rest of the room.</p>
-        <a class="next-class" href="#classes" data-next-class="[{&quot;day&quot;:&quot;monday&quot;,&quot;start&quot;:&quot;20:00&quot;,&quot;end&quot;:&quot;21:00&quot;,&quot;name&quot;:&quot;MMA&quot;,&quot;startLabel&quot;:&quot;8:00 pm&quot;,&quot;endLabel&quot;:&quot;9:00 pm&quot;},{&quot;day&quot;:&quot;wednesday&quot;,&quot;start&quot;:&quot;20:00&quot;,&quot;end&quot;:&quot;21:00&quot;,&quot;name&quot;:&quot;MMA&quot;,&quot;startLabel&quot;:&quot;8:00 pm&quot;,&quot;endLabel&quot;:&quot;9:00 pm&quot;},{&quot;day&quot;:&quot;friday&quot;,&quot;start&quot;:&quot;20:00&quot;,&quot;end&quot;:&quot;21:00&quot;,&quot;name&quot;:&quot;MMA&quot;,&quot;startLabel&quot;:&quot;8:00 pm&quot;,&quot;endLabel&quot;:&quot;9:00 pm&quot;}]" hidden></a>
+        <a class="next-class" href="#classes" data-next-class="[{&quot;day&quot;:&quot;monday&quot;,&quot;start&quot;:&quot;20:00&quot;,&quot;end&quot;:&quot;21:00&quot;,&quot;name&quot;:&quot;MMA&quot;,&quot;startLabel&quot;:&quot;8:00 pm&quot;,&quot;endLabel&quot;:&quot;9:00 pm&quot;},{&quot;day&quot;:&quot;wednesday&quot;,&quot;start&quot;:&quot;20:00&quot;,&quot;end&quot;:&quot;21:00&quot;,&quot;name&quot;:&quot;MMA&quot;,&quot;startLabel&quot;:&quot;8:00 pm&quot;,&quot;endLabel&quot;:&quot;9:00 pm&quot;},{&quot;day&quot;:&quot;friday&quot;,&quot;start&quot;:&quot;20:00&quot;,&quot;end&quot;:&quot;21:00&quot;,&quot;name&quot;:&quot;MMA&quot;,&quot;startLabel&quot;:&quot;8:00 pm&quot;,&quot;endLabel&quot;:&quot;9:00 pm&quot;}]" hidden><span>&nbsp;</span></a>
         <div class="actions">
           <a class="button" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99d%20like%20to%20book%20a%20trial%20MMA%20class." target="_blank" rel="noopener">Book your first class</a>
           <a class="button button-ghost" href="#classes">See the classes</a>
@@ -77,7 +76,7 @@
           <li><strong>Coached by</strong> Amjad Khan</li>
         </ul>
       </div>
-      <div class="hero-photo"><img src="images/mma.jpg" alt="Coach Amjad Khan guarding against a kick in the cage at IFT Fight Pass Lahore" width="800" height="600" fetchpriority="high"></div>
+      <div class="hero-photo"><picture><source type="image/webp" srcset="_img/mma-480.webp 480w, _img/mma-800.webp 800w" sizes="(max-width: 860px) 100vw, 45vw"><img src="images/mma.jpg" alt="Coach Amjad Khan guarding against a kick in the cage at IFT Fight Pass Lahore" width="800" height="600" fetchpriority="high"></picture></div>
     </section>
 
     <section class="section section-sage" id="learn">
@@ -157,7 +156,7 @@
     </header>
       <ul class="coaches">
       <li class="coach">
-      <div class="coach-photo"><img src="images/coach-amjad.jpg" alt="Amjad Khan in a rash guard and purple belt on the mats" width="600" height="600" loading="lazy"></div>
+      <div class="coach-photo"><picture><source type="image/webp" srcset="_img/coach-amjad-480.webp 480w, _img/coach-amjad-600.webp 600w" sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 320px"><img src="images/coach-amjad.jpg" alt="Amjad Khan in a rash guard and purple belt on the mats" width="600" height="600" loading="lazy"></picture></div>
       <div class="coach-body">
         <p class="coach-role">MMA head coach</p>
         <h3>Amjad Khan</h3>

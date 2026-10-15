@@ -1,6 +1,16 @@
 /* Mikado Jiu Jitsu — palette taken from the gym's own posters:
    cream paper, tatami sage, deep navy type. */
 
+/* Self-hosted, so the first paint never waits on another server (fonts/LICENSE.txt). */
+@font-face {
+  font-family: 'Anton'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('fonts/anton-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('fonts/inter-latin.woff2') format('woff2');
+}
+
 :root {
   color-scheme: light;
   --paper: #ebe5d8;
@@ -22,7 +32,7 @@
   --accent: var(--navy);
   --accent-hover: var(--navy-deep);
   --on-accent: #fff;
-  --label: var(--tatami);
+  --label: #486345;
   --tape-ink: var(--navy);
   --band-sage: var(--sage-soft);
   --band-navy: var(--navy);
@@ -37,7 +47,7 @@
   --icon-moon: inline;
   --icon-sun: none;
 
-  --whatsapp: #168a4a;
+  --whatsapp: #13803f;
   --whatsapp-deep: #0f6e3a;
 
   --radius: 18px;
@@ -147,7 +157,8 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
   background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
   font-size: 0.92rem; color: var(--ink); text-decoration: none; box-shadow: var(--card-shadow);
 }
-.next-class[hidden] { display: none; }
+/* Invisible, not removed, until app.js fills it in, so nothing below jumps. */
+.next-class[hidden] { visibility: hidden; }
 .next-class::before { content: ''; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--sage); }
 .next-class.is-on-now::before { background: var(--whatsapp); box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.22); }
 .next-class strong { color: var(--heading); }
@@ -225,7 +236,8 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 .site-nav a:hover { border-bottom-color: var(--sage); }
 .site-nav a[aria-current='page'] { border-bottom-color: var(--accent); font-weight: 600; }
 
-/* The toggle stays hidden until app.js can make it work. */
+/* The toggle stays invisible until app.js can make it work, keeping its
+   space so the header doesn't shift when it appears. */
 .theme-toggle {
   display: inline-grid; place-items: center; flex: none;
   width: 40px; height: 40px; padding: 0;
@@ -233,7 +245,7 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
   background: transparent; color: var(--heading); cursor: pointer;
   transition: background-color 0.2s ease, transform 0.3s ease;
 }
-.theme-toggle[hidden] { display: none; }
+.theme-toggle[hidden] { visibility: hidden; }
 .theme-toggle:hover { background: var(--surface); transform: rotate(-15deg); }
 .theme-toggle svg { width: 20px; height: 20px; }
 .theme-toggle .icon-moon { display: var(--icon-moon); }
@@ -246,7 +258,6 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
     order: 3; flex: 1 1 calc(100% - 54px); min-width: 0; margin: 0;
     overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
   }
-  .site-header:has(.theme-toggle[hidden]) .site-nav { flex-basis: 100%; }
   .theme-toggle { order: 4; width: 34px; height: 34px; }
   html { scroll-padding-top: 120px; }
 }
@@ -552,7 +563,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .gallery-intro { padding-bottom: 0; }
 .gallery-intro .section-head { margin-bottom: 24px; }
 .gallery-filters { display: flex; flex-wrap: wrap; gap: 10px; }
-.gallery-filters[hidden] { display: none; }
+.gallery-filters[hidden] { visibility: hidden; }
 .gallery-filters button {
   display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
@@ -668,7 +679,6 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .event.is-upcoming p { color: var(--ink-soft); }
 .event.is-upcoming .event-when { color: var(--label); }
 .event.is-upcoming .event-fees { color: var(--heading); }
-.event.is-past { opacity: 0.86; }
 .event-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 6px; }
 .event.is-upcoming .text-link { color: var(--accent); }
 .is-past .event-register, .is-past .add-calendar { display: none; }
@@ -765,6 +775,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .footer-links a { color: #fff; font-weight: 600; text-underline-offset: 4px; }
 
 main img { filter: var(--photo-filter); }
+/* <picture> only chooses the file; the <img> inside lays out as before. */
+picture { display: contents; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
