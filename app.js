@@ -69,6 +69,15 @@ function nextClassWords({ lesson, when }) {
   return { lead: 'Next class:', name: lesson.name, time: `${day} at ${lesson.startLabel}` };
 }
 
+// Gallery: which photos a filter shows, and stepping through them in the lightbox.
+function galleryShows(category, filter) {
+  return filter === 'all' || category === filter;
+}
+
+function stepIndex(index, count, step) {
+  return (index + step + count) % count;
+}
+
 function otherTheme(theme) {
   return theme === 'dark' ? 'light' : 'dark';
 }
@@ -157,6 +166,55 @@ function initNextClass(badge) {
   setInterval(show, 60 * 1000);
 }
 
+function initGallery(grid) {
+  const items = [...grid.querySelectorAll('li')];
+  const filters = document.querySelector('[data-gallery-filters]');
+  const lightbox = document.querySelector('[data-lightbox]');
+
+  if (filters) {
+    const buttons = [...filters.querySelectorAll('[data-filter]')];
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+      items.forEach((item) => { item.hidden = !galleryShows(item.dataset.category, button.dataset.filter); });
+    }));
+    filters.hidden = false;
+  }
+
+  if (!lightbox || typeof lightbox.showModal !== 'function') return;
+  const image = lightbox.querySelector('img');
+  const caption = lightbox.querySelector('figcaption');
+  let shown = [];
+  let index = 0;
+  const show = () => {
+    const link = shown[index];
+    const thumb = link.querySelector('img');
+    image.src = link.getAttribute('href');
+    image.alt = thumb.alt;
+    caption.textContent = link.dataset.caption;
+  };
+  const step = (by) => { index = stepIndex(index, shown.length, by); show(); };
+
+  grid.addEventListener('click', (event) => {
+    const link = event.target.closest('.photo-link');
+    if (!link) return;
+    event.preventDefault();
+    shown = items.filter((item) => !item.hidden).map((item) => item.querySelector('.photo-link'));
+    index = shown.indexOf(link);
+    show();
+    lightbox.showModal();
+  });
+  lightbox.querySelectorAll('[data-lightbox-step]').forEach((button) => {
+    button.addEventListener('click', () => step(Number(button.dataset.lightboxStep)));
+  });
+  lightbox.querySelector('[data-lightbox-close]').addEventListener('click', () => lightbox.close());
+  // A click on the dark backdrop (the dialog itself, not its contents) closes it.
+  lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
+  lightbox.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') step(1);
+    if (event.key === 'ArrowLeft') step(-1);
+  });
+}
+
 // "Add to calendar" menus close on a tap elsewhere or Escape, like other menus.
 function closeCalendarMenus() {
   const openMenus = () => document.querySelectorAll('details.add-calendar[open]');
@@ -212,6 +270,7 @@ if (typeof document !== 'undefined') {
   document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
   document.querySelectorAll('[data-announcement]').forEach(initAnnouncement);
   closeCalendarMenus();
+  document.querySelectorAll('[data-gallery]').forEach(initGallery);
   const today = lahoreToday(new Date());
   document.querySelectorAll('[data-schedule]').forEach((root) => initSchedule(root, today.day));
   markEvents(document.querySelectorAll('[data-event-date]'), today.iso);
@@ -221,6 +280,6 @@ if (typeof document !== 'undefined') {
 if (typeof module !== 'undefined') {
   module.exports = {
     lahoreToday, defaultScheduleDay, eventStatus, neighbourDay, otherTheme, contactKind, pageName,
-    lahoreMinutes, nextClass, nextClassWords,
+    lahoreMinutes, nextClass, nextClassWords, galleryShows, stepIndex,
   };
 }

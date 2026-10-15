@@ -547,6 +547,55 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .kids-podium { max-width: 360px; }
 }
 
+/* --- Gallery page ----------------------------------------------------------- */
+
+.gallery-intro { padding-bottom: 0; }
+.gallery-intro .section-head { margin-bottom: 24px; }
+.gallery-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.gallery-filters[hidden] { display: none; }
+.gallery-filters button {
+  display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  font: inherit; font-weight: 600; color: var(--ink);
+}
+.gallery-filters button span { font-size: 0.8rem; font-weight: 500; color: var(--ink-soft); }
+.gallery-filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.gallery-filters button[aria-pressed="true"] span { color: inherit; opacity: 0.8; }
+
+.photo-section { padding-top: clamp(24px, 4vw, 40px); }
+.photo-grid { columns: 3 260px; column-gap: 12px; }
+.photo-grid li { break-inside: avoid; margin-bottom: 12px; }
+.photo-grid li[hidden] { display: none; }
+.photo-link { display: block; overflow: hidden; border-radius: 14px; }
+.photo-link img { display: block; width: 100%; height: auto; transition: transform 0.4s ease; }
+.photo-link:hover img, .photo-link:focus-visible img { transform: scale(1.03); }
+@media (max-width: 560px) { .photo-grid { columns: 2; column-gap: 8px; } .photo-grid li { margin-bottom: 8px; } }
+
+.lightbox {
+  width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 56px 64px 24px;
+  border: 0; background: rgba(6, 12, 24, 0.94); color: #e8edf5;
+}
+.lightbox[open] { display: grid; place-items: center; }
+.lightbox::backdrop { background: rgba(6, 12, 24, 0.85); }
+.lightbox figure { display: grid; gap: 14px; justify-items: center; max-width: 100%; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 140px); width: auto; height: auto; border-radius: 10px; filter: none; }
+.lightbox figcaption { max-width: 70ch; text-align: center; font-size: 0.92rem; color: #c3cee0; }
+.lightbox button {
+  position: absolute; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; cursor: pointer;
+  border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: #fff; font-size: 2rem; line-height: 1;
+}
+.lightbox button:hover, .lightbox button:focus-visible { background: rgba(255, 255, 255, 0.22); }
+.lightbox-close { top: 12px; right: 12px; }
+.lightbox-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 10px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 640px) {
+  .lightbox { padding: 60px 12px 84px; }
+  .lightbox img { max-height: calc(100vh - 230px); }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 16px; transform: none; }
+  .lightbox-prev { left: calc(50% - 60px); }
+  .lightbox-next { right: calc(50% - 60px); }
+}
+
 /* --- Coach pages ---------------------------------------------------------- */
 
 .coach-more { margin-top: 4px; }
