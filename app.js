@@ -98,9 +98,36 @@ function pageName(pathname) {
   return file === '' || file === 'index' ? 'home' : file;
 }
 
-const CONTACT_LABELS = {
+// Every tap on a link, button or question is counted. Contact taps keep their
+// own kind; the rest are calendar adds, other links, buttons, or opened questions.
+function tapKind(tag, href) {
+  if (tag === 'summary') return 'open';
+  if (tag === 'button') return 'button';
+  if (href.endsWith('.ics') || href.startsWith('https://calendar.google.com/')) return 'calendar';
+  return contactKind(href) || 'link';
+}
+
+// "Adults Jiu Jitsu: Fundamentals, 3 classes per week" becomes
+// "adults-jiu-jitsu-fundamentals-3-classes-per-week".
+function slug(text) {
+  return text.normalize('NFKD').toLowerCase().replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80).replace(/-+$/, '') || 'unnamed';
+}
+
+const KIND_LABELS = {
   whatsapp: 'WhatsApp', call: 'Call', instagram: 'Instagram', directions: 'Directions', review: 'Google review',
+  calendar: 'Calendar', link: 'Link', button: 'Button', open: 'Opened',
 };
+
+// A tap becomes a GoatCounter event such as "whatsapp-home-register-seminar-with-yousuf-nabi".
+function tapEvent({ tag, href = '', label }, page) {
+  const kind = tapKind(tag, href);
+  const text = label.replace(/\s+/g, ' ').trim();
+  return {
+    path: `${kind}-${page}-${slug(text)}`,
+    title: `${KIND_LABELS[kind]}: “${text}” on the ${page} page`,
+  };
+}
 
 // --- Page wiring -----------------------------------------------------------
 
@@ -252,21 +279,31 @@ function initThemeToggle(button) {
   button.hidden = false;
 }
 
+// What a tapped element is called: its data-count name where the page gives
+// one, otherwise what a screen reader would say, or a photo's description.
+function tapLabel(element) {
+  return element.dataset.count || element.getAttribute('aria-label') || element.textContent.trim()
+    || element.querySelector('img')?.alt || element.getAttribute('href') || '';
+}
+
 // GoatCounter (loaded by the page when analytics is on) records each tap as an
-// event such as "whatsapp-mma". Without it, taps just do what they always do.
-function countContactTaps(page) {
+// event. Without it, taps just do what they always do. Counting happens before
+// the page reacts, so a button is named as it was when tapped.
+function countTaps(page) {
   document.addEventListener('click', (event) => {
-    const link = event.target.closest?.('a[href]');
-    const kind = link && contactKind(link.getAttribute('href'));
-    if (!kind || !window.goatcounter?.count) return;
-    window.goatcounter.count({
-      path: `${kind}-${page}`, title: `${CONTACT_LABELS[kind]} tap on the ${page} page`, event: true,
-    });
-  });
+    const element = event.target.closest?.('a[href], button, summary');
+    if (!element || !window.goatcounter?.count) return;
+    // A question is counted when it opens, not when it closes.
+    if (element.tagName === 'SUMMARY' && element.parentElement?.open) return;
+    const tap = tapEvent({
+      tag: element.tagName.toLowerCase(), href: element.getAttribute('href') || '', label: tapLabel(element),
+    }, page);
+    window.goatcounter.count({ ...tap, event: true });
+  }, true);
 }
 
 if (typeof document !== 'undefined') {
-  countContactTaps(pageName(location.pathname));
+  countTaps(pageName(location.pathname));
   document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
   document.querySelectorAll('[data-announcement]').forEach(initAnnouncement);
   closeCalendarMenus();
@@ -279,7 +316,7 @@ if (typeof document !== 'undefined') {
 
 if (typeof module !== 'undefined') {
   module.exports = {
-    lahoreToday, defaultScheduleDay, eventStatus, neighbourDay, otherTheme, contactKind, pageName,
+    lahoreToday, defaultScheduleDay, eventStatus, neighbourDay, otherTheme, contactKind, tapKind, slug, tapEvent, pageName,
     lahoreMinutes, nextClass, nextClassWords, galleryShows, stepIndex,
   };
 }
