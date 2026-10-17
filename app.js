@@ -78,6 +78,16 @@ function stepIndex(index, count, step) {
   return (index + step + count) % count;
 }
 
+// The phone header tucks away while scrolling down and comes back on the way
+// up. Small movements keep it as it is, so it doesn't flicker.
+const TUCK_AFTER = 120;
+const TUCK_STEP = 8;
+function headerTucked({ tucked, y, lastY, menuOpen }) {
+  if (menuOpen || y < TUCK_AFTER) return false;
+  if (Math.abs(y - lastY) < TUCK_STEP) return tucked;
+  return y > lastY;
+}
+
 function otherTheme(theme) {
   return theme === 'dark' ? 'light' : 'dark';
 }
@@ -131,34 +141,52 @@ function tapEvent({ tag, href = '', label }, page) {
 
 // --- Page wiring -----------------------------------------------------------
 
-function initSchedule(root, today) {
+// Tabs: one panel shows at a time. A link to a hidden panel (#pricing-kids)
+// switches to its tab first, then scrolls to it.
+function initTabs(root, first) {
   const tabs = [...root.querySelectorAll('[role="tab"]')];
-  const panels = [...root.querySelectorAll('[role="tabpanel"]')];
-  const days = tabs.map((tab) => tab.dataset.day);
+  const panels = tabs.map((tab) => document.getElementById(tab.getAttribute('aria-controls')));
 
-  const select = (day, { focus = false } = {}) => {
-    tabs.forEach((tab) => {
-      const selected = tab.dataset.day === day;
-      tab.setAttribute('aria-selected', String(selected));
-      tab.tabIndex = selected ? 0 : -1;
-      if (selected && focus) tab.focus();
+  const select = (tab, { focus = false } = {}) => {
+    tabs.forEach((other, i) => {
+      const selected = other === tab;
+      other.setAttribute('aria-selected', String(selected));
+      other.tabIndex = selected ? 0 : -1;
+      panels[i].classList.toggle('is-active', selected);
+      if (selected && focus) other.focus();
     });
-    panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.day === day));
   };
 
   tabs.forEach((tab) => {
-    tab.addEventListener('click', () => select(tab.dataset.day));
+    tab.addEventListener('click', () => select(tab));
     tab.addEventListener('keydown', (event) => {
-      const target = neighbourDay(days, tab.dataset.day, event.key);
+      const target = neighbourDay(tabs, tab, event.key);
       if (!target) return;
       event.preventDefault();
       select(target, { focus: true });
     });
   });
 
-  panels.forEach((panel) => panel.classList.toggle('is-today', panel.dataset.day === today));
+  const fromHash = () => {
+    const index = panels.findIndex((panel) => `#${panel.id}` === location.hash);
+    if (index < 0) return false;
+    select(tabs[index]);
+    panels[index].scrollIntoView();
+    return true;
+  };
+  window.addEventListener('hashchange', fromHash);
+
   root.classList.add('has-tabs');
-  select(defaultScheduleDay(today, days));
+  if (!fromHash()) select(first(tabs));
+}
+
+function initSchedule(root, today) {
+  root.querySelectorAll('[role="tabpanel"]')
+    .forEach((panel) => panel.classList.toggle('is-today', panel.dataset.day === today));
+  initTabs(root, (tabs) => {
+    const days = tabs.map((tab) => tab.dataset.day);
+    return tabs[days.indexOf(defaultScheduleDay(today, days))];
+  });
 }
 
 function markEvents(items, todayIso) {
@@ -279,6 +307,37 @@ function initThemeToggle(button) {
   button.hidden = false;
 }
 
+// On phones the stylesheet folds the menu behind the menu button.
+function initMenu(header) {
+  const button = header.querySelector('[data-menu-toggle]');
+  const isOpen = () => header.classList.contains('is-open');
+  const setOpen = (open) => {
+    header.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+
+  button.addEventListener('click', () => setOpen(!isOpen()));
+  header.querySelectorAll('.site-nav a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('click', (event) => { if (isOpen() && !header.contains(event.target)) setOpen(false); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !isOpen()) return;
+    setOpen(false);
+    button.focus();
+  });
+
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const tucked = headerTucked({ tucked: header.classList.contains('is-tucked'), y, lastY, menuOpen: isOpen() });
+    header.classList.toggle('is-tucked', tucked);
+    if (Math.abs(y - lastY) >= TUCK_STEP) lastY = y;
+  }, { passive: true });
+
+  header.classList.add('has-menu');
+  button.hidden = false;
+}
+
 // What a tapped element is called: its data-count name where the page gives
 // one, otherwise what a screen reader would say, or a photo's description.
 function tapLabel(element) {
@@ -305,11 +364,13 @@ function countTaps(page) {
 if (typeof document !== 'undefined') {
   countTaps(pageName(location.pathname));
   document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
+  document.querySelectorAll('[data-site-header]').forEach(initMenu);
   document.querySelectorAll('[data-announcement]').forEach(initAnnouncement);
   closeCalendarMenus();
   document.querySelectorAll('[data-gallery]').forEach(initGallery);
   const today = lahoreToday(new Date());
   document.querySelectorAll('[data-schedule]').forEach((root) => initSchedule(root, today.day));
+  document.querySelectorAll('[data-tabs]').forEach((root) => initTabs(root, (tabs) => tabs[0]));
   markEvents(document.querySelectorAll('[data-event-date]'), today.iso);
   document.querySelectorAll('[data-next-class]').forEach(initNextClass);
 }
@@ -317,6 +378,6 @@ if (typeof document !== 'undefined') {
 if (typeof module !== 'undefined') {
   module.exports = {
     lahoreToday, defaultScheduleDay, eventStatus, neighbourDay, otherTheme, contactKind, tapKind, slug, tapEvent, pageName,
-    lahoreMinutes, nextClass, nextClassWords, galleryShows, stepIndex,
+    lahoreMinutes, nextClass, nextClassWords, galleryShows, stepIndex, headerTucked,
   };
 }
