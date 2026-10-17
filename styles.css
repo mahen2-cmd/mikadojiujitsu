@@ -515,15 +515,15 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .testimonial blockquote p:first-child::before { content: '“'; display: block; height: 0.7em; font: 400 3rem/1 var(--display); color: var(--sage); }
 .testimonial figcaption { align-self: end; font-size: 0.88rem; color: var(--ink-soft); }
 .testimonial figcaption strong { color: var(--heading); }
-.more-reviews { display: flex; justify-content: center; margin-top: 28px; }
+.more-testimonials { display: flex; justify-content: center; margin-top: 28px; }
 
-/* The reviews page: cards of different lengths packed into columns. */
-.reviews-intro { padding-bottom: 0; }
-.reviews-intro .section-head { margin-bottom: 0; }
-.review-section { padding-top: clamp(24px, 4vw, 40px); }
-.review-wall { columns: 3 300px; column-gap: 18px; }
-.review-wall .testimonial { break-inside: avoid; margin-bottom: 18px; }
-.review-wall .testimonial figure { background: var(--surface-raised); border: 1px solid var(--line); }
+/* The testimonials page: cards of different lengths packed into columns. */
+.testimonials-intro { padding-bottom: 0; }
+.testimonials-intro .section-head { margin-bottom: 0; }
+.testimonial-section { padding-top: clamp(24px, 4vw, 40px); }
+.testimonial-wall { columns: 3 300px; column-gap: 18px; }
+.testimonial-wall .testimonial { break-inside: avoid; margin-bottom: 18px; }
+.testimonial-wall .testimonial figure { background: var(--surface-raised); border: 1px solid var(--line); }
 
 /* --- Results -------------------------------------------------------------- */
 
@@ -811,10 +811,14 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 
 /* --- Phones --------------------------------------------------------------- */
 
-/* The desktop layout stacked into one column runs to dozens of screens, so on
-   phones the header folds into a menu, pricing becomes tabs, and long runs of
-   cards become rows to swipe through. Everything stays on the page. */
-@media (max-width: 640px) {
+/* The menu needs about 1400px beside the name and buttons. Below that the
+   name gives way to the logo, and below 1180px the menu folds behind a button. */
+.site-header .button { white-space: nowrap; }
+@media (min-width: 1181px) and (max-width: 1400px) {
+  .site-header .brand span { display: none; }
+  .site-header .site-nav { gap: 18px; }
+}
+@media (max-width: 1180px) {
   html { scroll-padding-top: 76px; }
 
   .site-header.has-menu { flex-wrap: nowrap; gap: 10px; padding-top: 10px; padding-bottom: 10px; transition: transform 0.25s ease; }
@@ -832,7 +836,12 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .has-menu .site-nav a { padding: 13px 0; font-size: 1.05rem; border-bottom: 1px solid var(--line); }
   .has-menu .theme-toggle { width: 40px; height: 40px; }
   .site-header.is-tucked { transform: translateY(-100%); }
+}
 
+/* The desktop layout stacked into one column runs to dozens of screens, so on
+   phones pricing becomes tabs and long runs of cards become rows to swipe
+   through. Everything stays on the page. */
+@media (max-width: 640px) {
   .hero .kicker { font-size: 0.7rem; letter-spacing: 0.1em; }
   .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
   .facts li { font-size: 0.74rem; line-height: 1.35; }
