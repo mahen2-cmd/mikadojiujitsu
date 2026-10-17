@@ -511,9 +511,19 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 }
 .testimonial blockquote { margin: 0; }
 .testimonial blockquote p { color: var(--ink); line-height: 1.55; }
-.testimonial blockquote p::before { content: '“'; display: block; height: 0.7em; font: 400 3rem/1 var(--display); color: var(--sage); }
+.testimonial blockquote p + p { margin-top: 0.8em; }
+.testimonial blockquote p:first-child::before { content: '“'; display: block; height: 0.7em; font: 400 3rem/1 var(--display); color: var(--sage); }
 .testimonial figcaption { align-self: end; font-size: 0.88rem; color: var(--ink-soft); }
 .testimonial figcaption strong { color: var(--heading); }
+.more-reviews { display: flex; justify-content: center; margin-top: 28px; }
+
+/* The reviews page: cards of different lengths packed into columns. */
+.reviews-intro { padding-bottom: 0; }
+.reviews-intro .section-head { margin-bottom: 0; }
+.review-section { padding-top: clamp(24px, 4vw, 40px); }
+.review-wall { columns: 3 300px; column-gap: 18px; }
+.review-wall .testimonial { break-inside: avoid; margin-bottom: 18px; }
+.review-wall .testimonial figure { background: var(--surface-raised); border: 1px solid var(--line); }
 
 /* --- Results -------------------------------------------------------------- */
 
