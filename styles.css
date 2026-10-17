@@ -642,6 +642,35 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .lightbox-next { right: calc(50% - 60px); }
 }
 
+/* --- About page ------------------------------------------------------------ */
+
+.about-chapter { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.about-chapter-text-only { grid-template-columns: minmax(0, 1fr); }
+.about-chapter .section-head { margin-bottom: 20px; }
+.about-text { display: grid; gap: 16px; max-width: 62ch; font-size: 1.05rem; color: var(--ink); }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--card-shadow); }
+.about-outcome { margin-top: 36px; max-width: 70ch; font-size: 1.1rem; font-weight: 600; color: var(--heading); }
+.about-milestones .journey-step { grid-template-columns: 150px minmax(0, 1fr); padding-bottom: 28px; }
+.about-milestones .journey-step::before { left: 162px; }
+.about-milestones .journey-step::after { left: 157px; }
+.about-milestones .journey-year { font-size: 1.2rem; line-height: 1.2; }
+.about-milestones .journey-body p { color: var(--ink); }
+.about-milestones .journey-step:last-child .journey-body p { font-weight: 600; color: var(--heading); }
+.about-quote { max-width: 760px; margin-top: 20px; }
+.about-sources { padding-top: clamp(40px, 6vw, 64px); padding-bottom: clamp(40px, 6vw, 64px); }
+.about-sources-title { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 14px; }
+.about-sources ul { display: grid; gap: 10px; max-width: 80ch; padding-left: 1.2em; list-style: disc; color: var(--ink-soft); }
+.about-sources .text-link { font-weight: 500; }
+@media (max-width: 860px) {
+  .about-chapter { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .about-milestones .journey-step { grid-template-columns: 1fr; }
+  .about-milestones .journey-step::before { left: 5px; }
+  .about-milestones .journey-step::after { left: 0; }
+  .about-milestones .journey-year { font-size: 1.1rem; }
+}
+
 /* --- Coach pages ---------------------------------------------------------- */
 
 .coach-more { margin-top: 4px; }
