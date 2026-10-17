@@ -331,6 +331,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   box-shadow: var(--card-shadow);
 }
+/* On a paper band the cards step up a shade so they don't blend in. */
+.section-paper .program { background: var(--surface-raised); }
 .program-photo { overflow: hidden; }
 .program-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.5s ease; }
 .program:hover .program-photo img { transform: scale(1.04); }
