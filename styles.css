@@ -517,6 +517,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .hero-instagram .instagram-handle { font-size: 1rem; }
 .hero-instagram .instagram-handle svg { width: 20px; height: 20px; }
 .coach-body p:last-child { color: var(--ink-soft); }
+.coach-text { display: grid; gap: 10px; color: var(--ink-soft); }
 
 /* --- Testimonials ---------------------------------------------------------- */
 
