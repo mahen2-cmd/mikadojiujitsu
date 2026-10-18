@@ -783,8 +783,11 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 
 /* --- Gallery --------------------------------------------------------------- */
 
-.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: dense; gap: 12px; }
 .gallery img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; }
+/* A wide photo takes two tiles and the height of the row. */
+.gallery-wide { grid-column: span 2; }
+.gallery-wide img { aspect-ratio: auto; }
 .gallery-video { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: contain; border-radius: 14px; background: #000; }
 @media (max-width: 640px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
