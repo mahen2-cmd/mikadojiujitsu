@@ -148,9 +148,8 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 .button-ghost { background: transparent; color: var(--accent); }
 .button-ghost:hover { background: var(--accent); color: var(--on-accent); }
 .button-small { padding: 9px 18px; font-size: 0.9rem; }
-/* On phones the WhatsApp button and the menu already cover booking. */
+/* The header has no booking button: the WhatsApp button covers booking. */
 @media (max-width: 640px) {
-  .header-book { display: none; }
   .menu-toggle { margin-left: auto; }
 }
 
@@ -268,15 +267,21 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 .menu-toggle .icon-close, .is-open .menu-toggle .icon-menu { display: none; }
 .is-open .menu-toggle .icon-close { display: block; }
 
-@media (max-width: 860px) {
+/* Tablets: the logo, theme toggle and booking button on top, and every tab
+   beneath them, wrapping to a second row on the narrowest. */
+@media (max-width: 1180px) {
   .site-header { flex-wrap: wrap; row-gap: 6px; }
-  .site-header .button { margin-left: auto; }
+  .site-header .logo-mark { width: 100px; }
+  .theme-toggle { margin-left: auto; width: 34px; height: 34px; }
   .site-nav {
-    order: 3; flex: 1 1 calc(100% - 54px); min-width: 0; margin: 0;
-    overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
+    order: 3; flex: 1 1 100%; margin: 0;
+    flex-wrap: wrap; justify-content: space-between; gap: 2px 12px;
   }
-  .theme-toggle { order: 4; width: 34px; height: 34px; }
+  .site-nav a { font-size: 0.85rem; }
   html { scroll-padding-top: 140px; }
+}
+@media (min-width: 641px) and (max-width: 700px) {
+  .site-nav { justify-content: center; column-gap: 18px; }
 }
 
 /* --- Hero ------------------------------------------------------------------ */
@@ -853,17 +858,16 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 /* --- Phones --------------------------------------------------------------- */
 
 /* The menu needs about 1400px beside the logo and buttons. Below that the
-   links close up, and below 1180px the menu folds behind a button. */
-.site-header .button { white-space: nowrap; }
+   links close up, below 1180px they move to their own row, and on phones
+   they fold behind a button. */
 @media (min-width: 1181px) and (max-width: 1400px) {
   .site-header .site-nav { gap: 18px; }
 }
-@media (max-width: 1180px) {
+@media (max-width: 640px) {
   html { scroll-padding-top: 92px; }
 
   .site-header.has-menu { flex-wrap: nowrap; gap: 10px; padding-top: 10px; padding-bottom: 10px; transition: transform 0.25s ease; }
   .has-menu .logo-mark { width: 100px; }
-  .has-menu .button { margin-left: auto; padding: 9px 14px; white-space: nowrap; }
   .has-menu .menu-toggle { display: grid; }
   .has-menu .site-menu {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
@@ -871,9 +875,9 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
     border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px -18px rgba(0, 0, 0, 0.35);
   }
   .has-menu.is-open .site-menu { display: grid; justify-items: start; gap: 14px; }
-  .has-menu .site-nav { display: grid; width: 100%; overflow: visible; }
+  .has-menu .site-nav { display: grid; justify-content: stretch; width: 100%; overflow: visible; }
   .has-menu .site-nav a { padding: 13px 0; font-size: 1.05rem; border-bottom: 1px solid var(--line); }
-  .has-menu .theme-toggle { width: 40px; height: 40px; }
+  .has-menu .theme-toggle { order: 4; margin-left: 0; width: 40px; height: 40px; }
   .site-header.is-tucked { transform: translateY(-100%); }
 }
 
