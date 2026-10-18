@@ -300,6 +300,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .hero-line { white-space: nowrap; }
 .hero-third { display: block; margin-top: 0.06em; white-space: nowrap; }
 .hero-sub { max-width: 54ch; font-size: 1.1rem; color: var(--ink-soft); }
+.coach-bio { display: grid; gap: 14px; font-size: 1.02rem; }
+.coach-bio p:first-child { font-weight: 600; color: var(--heading); }
 
 .hero-photo { position: relative; }
 .hero-photo::before {
