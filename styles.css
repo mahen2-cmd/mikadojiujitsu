@@ -374,12 +374,16 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .program-when { font-size: 0.85rem; font-weight: 600; color: var(--label); }
 .program-body .text-link { margin-top: auto; padding-top: 6px; }
 .program-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
-.program-wide .program-photo img { height: 100%; aspect-ratio: auto; min-height: 260px; object-position: center 15%; }
+/* The photo fills the card's height rather than setting it, so the card keeps its size
+   while the photo loads and links further down the page land in the right place. */
+.program-wide .program-photo { position: relative; min-height: 340px; }
+.program-wide .program-photo img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: center 30%; }
 .program-wide .program-body { padding: clamp(22px, 4vw, 40px); align-content: center; }
 .program-wide .program-body > p:not(.program-when) { max-width: 52ch; }
 @media (max-width: 640px) {
   .program-wide { grid-template-columns: 1fr; }
-  .program-wide .program-photo img { aspect-ratio: 4 / 3; min-height: 0; }
+  .program-wide .program-photo { min-height: 0; }
+  .program-wide .program-photo img { position: static; aspect-ratio: 4 / 3; }
 }
 
 /* --- Values ---------------------------------------------------------------- */
@@ -918,7 +922,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   /* On the seminars page the list is the page, so it stacks instead. */
   .page-events .events { display: grid; margin: 0; padding: 0; overflow: visible; scroll-snap-type: none; }
   .program-wide { display: flex; }
-  .program-wide .program-photo img { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
+  .program-wide .program-photo { min-height: 0; }
+  .program-wide .program-photo img { position: static; height: auto; aspect-ratio: 4 / 3; }
   .program-wide .program-body { padding: 22px; }
   .coach-photo img { aspect-ratio: 4 / 3; object-position: center 25%; }
 }
