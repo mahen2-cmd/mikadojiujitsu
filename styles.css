@@ -539,9 +539,10 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .more-testimonials { display: flex; justify-content: center; margin-top: 28px; }
 
 /* The testimonials page: cards of different lengths packed into columns. */
-.testimonials-intro { padding-bottom: 0; }
-.testimonials-intro .section-head { margin-bottom: 0; }
-.testimonial-section { padding-top: clamp(24px, 4vw, 40px); }
+.testimonials-intro, .page-intro { padding-bottom: 0; }
+.testimonials-intro .section-head, .page-intro .section-head { margin-bottom: 0; }
+.testimonial-section, .page-body { padding-top: clamp(24px, 4vw, 40px); }
+.page-intro + .page-events { margin-top: clamp(32px, 5vw, 56px); }
 .testimonial-wall { columns: 3 300px; column-gap: 18px; }
 .testimonial-wall .testimonial { break-inside: avoid; margin-bottom: 18px; }
 .testimonial-wall .testimonial figure { background: var(--surface-raised); border: 1px solid var(--line); }
@@ -917,6 +918,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .testimonials::-webkit-scrollbar, .events::-webkit-scrollbar, .tabs::-webkit-scrollbar { display: none; }
   .programs > *, .coaches > *, .result-list > *, .testimonials > *, .events > * { flex: 0 0 84%; scroll-snap-align: start; }
   .coaches > :only-child { flex-basis: 100%; }
+  /* On the seminars page the list is the page, so it stacks instead. */
+  .page-events .events { display: grid; margin: 0; padding: 0; overflow: visible; scroll-snap-type: none; }
   .program-wide { display: flex; }
   .program-wide .program-photo img { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
   .program-wide .program-body { padding: 22px; }
