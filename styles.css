@@ -603,8 +603,10 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .class-slot-book { justify-self: start; margin-top: 10px; }
 .class-slot-when { font-weight: 600; color: var(--label); font-variant-numeric: tabular-nums; }
 
-.kids-competing { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 56px); align-items: center; }
+.kids-competing { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 56px); align-items: start; }
+.kids-podium { display: grid; gap: 20px; }
 .kids-podium img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+.kids-competing-video { width: 100%; aspect-ratio: 9 / 16; border-radius: var(--radius); background: #000; object-fit: cover; }
 .kids-competing-copy { display: grid; gap: 16px; justify-items: start; }
 .kids-competing-copy p:not(.lead) { color: #c3cee0; max-width: 60ch; }
 .section-navy .text-link { color: var(--sage); }

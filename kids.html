@@ -17,7 +17,7 @@
   <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=dcec8e1eab">
+  <link rel="stylesheet" href="styles.css?v=d33ba1806b">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -216,7 +216,12 @@
       
     </header>
       <div class="kids-competing">
-        <figure class="kids-podium"><picture><source type="image/webp" srcset="sized/kids-podium-480.webp 480w, sized/kids-podium-800.webp 800w" sizes="(max-width: 640px) 100vw, 460px"><img src="images/kids-podium.jpg" alt="Three kids with their medals on the podium at Grappling Industries Kuala Lumpur" width="800" height="1000" loading="lazy"></picture></figure>
+        <div class="kids-podium">
+          <figure><picture><source type="image/webp" srcset="sized/kids-podium-480.webp 480w, sized/kids-podium-800.webp 800w" sizes="(max-width: 640px) 100vw, 460px"><img src="images/kids-podium.jpg" alt="Three kids with their medals on the podium at Grappling Industries Kuala Lumpur" width="800" height="1000" loading="lazy"></picture></figure>
+          <video class="kids-competing-video" controls playsinline preload="none" poster="images/kids-competing-poster.jpg" aria-label="Zargham’s match at Grappling Industries Kuala Lumpur">
+          <source src="videos/kids-competing.mp4" type="video/mp4">
+        </video>
+        </div>
         <div class="kids-competing-copy">
           <p class="lead">In August 2026 our young athletes stepped onto the international stage at Grappling Industries Kuala Lumpur, competing against kids from academies across the region and bringing home wins and medals.</p>
           <p>Zargham, Shaheryar’s very first student, became the first Mikado Jiu Jitsu kid to compete for the gym. Competing is never required — but the door is open for every kid who wants to test themselves.</p>
