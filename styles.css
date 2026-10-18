@@ -298,6 +298,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .hero-copy { display: grid; gap: 22px; justify-items: start; }
 /* Each headline line stays whole; some phone browsers balance it into a split. */
 .hero-line { white-space: nowrap; }
+/* Keeps a name like Mikado Jiu Jitsu together on one line. */
+.nowrap { white-space: nowrap; }
 .hero-third { display: block; margin-top: 0.06em; white-space: nowrap; }
 .hero-sub { max-width: 54ch; font-size: 1.1rem; color: var(--ink-soft); }
 .coach-bio { display: grid; gap: 14px; font-size: 1.02rem; }
