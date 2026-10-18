@@ -788,11 +788,16 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 /* A wide photo takes two tiles and the height of the row. */
 .gallery-wide { grid-column: span 2; }
 .gallery-wide img { aspect-ratio: auto; }
+/* A tall photo runs down two rows, beside two wide photos. */
+.gallery-tall { position: relative; grid-row: span 2; }
+.gallery-tall img { position: absolute; inset: 0; aspect-ratio: auto; }
 .gallery-video { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: contain; border-radius: 14px; background: #000; }
 @media (max-width: 640px) {
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   /* On phones a wide photo has a row of its own; a last photo after it would sit alone, so it fills its row too. */
   .gallery-wide + li:last-child { grid-column: span 2; }
+  .gallery-tall { position: static; grid-column: span 2; grid-row: auto; }
+  .gallery-tall img { position: static; aspect-ratio: 4 / 5; }
 }
 
 /* --- Visit and footer ------------------------------------------------------ */
