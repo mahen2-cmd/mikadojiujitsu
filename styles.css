@@ -289,7 +289,9 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 }
 main { background-image: var(--hero-glow); background-repeat: no-repeat; background-size: 100% 900px; }
 .hero-copy { display: grid; gap: 22px; justify-items: start; }
-.hero-third { display: block; margin-top: 0.06em; }
+/* Each headline line stays whole; some phone browsers balance it into a split. */
+.hero-line { white-space: nowrap; }
+.hero-third { display: block; margin-top: 0.06em; white-space: nowrap; }
 .hero-sub { max-width: 54ch; font-size: 1.1rem; color: var(--ink-soft); }
 
 .hero-photo { position: relative; }
