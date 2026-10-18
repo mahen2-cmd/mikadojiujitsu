@@ -329,6 +329,16 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .hero-photo img { aspect-ratio: 5 / 4; }
 }
 
+/* Coach pages: the portrait keeps its full height so the whole coach shows. Beside a
+   long bio it stays in view while you read; on narrower screens it comes first. */
+.coach-hero { align-items: start; }
+.coach-hero .hero-photo { position: sticky; top: 110px; }
+.coach-hero .hero-photo img { aspect-ratio: 3 / 4; }
+@media (max-width: 860px) {
+  .coach-hero .hero-photo { position: relative; top: auto; order: -1; width: min(100% - 14px, 420px); }
+  .coach-hero .hero-photo img { aspect-ratio: 3 / 4; }
+}
+
 /* --- Sections -------------------------------------------------------------- */
 
 .section { padding: clamp(56px, 8vw, 104px) var(--gutter); }
