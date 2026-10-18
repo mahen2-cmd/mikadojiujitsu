@@ -292,6 +292,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 /* Each headline line stays whole; some phone browsers balance it into a split. */
 .hero-line { white-space: nowrap; }
 .hero-third { display: block; margin-top: 0.06em; white-space: nowrap; }
+.hero-video { width: 100%; max-width: 560px; aspect-ratio: 16 / 9; border-radius: var(--radius); background: #000; object-fit: cover; }
 .hero-sub { max-width: 54ch; font-size: 1.1rem; color: var(--ink-soft); }
 
 .hero-photo { position: relative; }
