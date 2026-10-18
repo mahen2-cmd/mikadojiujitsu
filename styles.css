@@ -457,16 +457,9 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .founder figcaption { margin-top: 14px; font-size: 0.92rem; color: var(--ink-soft); }
 .founder figcaption strong { display: block; font-size: 1.1rem; color: var(--heading); }
 
-.chapters { display: grid; gap: 0; border-left: 2px solid var(--sage); }
-.chapter { position: relative; padding: 0 0 26px 26px; }
-.chapter::before {
-  content: ''; position: absolute; left: -8px; top: 6px; width: 14px; height: 14px;
-  background: var(--bg); border: 3px solid var(--accent); border-radius: 50%;
-}
-.chapter-year { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--heading); }
-.chapter p { margin-top: 4px; color: var(--ink-soft); }
+.story-text { display: grid; gap: 16px; color: var(--ink-soft); }
 
-.quote { margin-top: 12px; padding: 24px 26px; background: var(--band-sage); border-radius: var(--radius); }
+.quote { margin-top: 28px; padding: 24px 26px; background: var(--band-sage); border-radius: var(--radius); }
 .quote p { font-size: 1.2rem; font-weight: 600; line-height: 1.4; color: var(--heading); }
 .quote cite { display: block; margin-top: 8px; font-size: 0.88rem; font-style: normal; color: var(--ink-soft); }
 
