@@ -603,8 +603,11 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .class-slot-book { justify-self: start; margin-top: 10px; }
 .class-slot-when { font-weight: 600; color: var(--label); font-variant-numeric: tabular-nums; }
 
-.kids-competing { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 56px); align-items: start; }
-.kids-podium { display: grid; gap: 20px; }
+.kids-competing { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(24px, 5vw, 56px); align-items: center; }
+/* The podium photo and the match video side by side, sized to the same height
+   (4:5 and 9:16 columns in proportion). */
+.kids-podium { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 0.5625fr); gap: clamp(10px, 1.6vw, 18px); }
+.kids-podium figure { margin: 0; }
 .kids-podium img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
 .kids-competing-video { width: 100%; aspect-ratio: 9 / 16; border-radius: var(--radius); background: #000; object-fit: cover; }
 .kids-competing-copy { display: grid; gap: 16px; justify-items: start; }
@@ -613,7 +616,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 
 @media (max-width: 860px) {
   .class-layout, .kids-competing { grid-template-columns: 1fr; }
-  .kids-podium { max-width: 360px; }
+  .kids-podium { max-width: 560px; }
 }
 
 /* --- Gallery page ----------------------------------------------------------- */
