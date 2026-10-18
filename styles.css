@@ -458,6 +458,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .founder figcaption strong { display: block; font-size: 1.1rem; color: var(--heading); }
 
 .story-text { display: grid; gap: 16px; color: var(--ink-soft); }
+.story-photo { margin-top: 28px; }
+.story-photo img { width: 100%; border-radius: var(--radius); }
 
 .quote { margin-top: 28px; padding: 24px 26px; background: var(--band-sage); border-radius: var(--radius); }
 .quote p { font-size: 1.2rem; font-weight: 600; line-height: 1.4; color: var(--heading); }
