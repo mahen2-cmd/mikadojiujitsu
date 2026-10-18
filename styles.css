@@ -297,7 +297,6 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 /* Each headline line stays whole; some phone browsers balance it into a split. */
 .hero-line { white-space: nowrap; }
 .hero-third { display: block; margin-top: 0.06em; white-space: nowrap; }
-.hero-video { width: 100%; max-width: 560px; aspect-ratio: 16 / 9; border-radius: var(--radius); background: #000; object-fit: cover; }
 .hero-sub { max-width: 54ch; font-size: 1.1rem; color: var(--ink-soft); }
 
 .hero-photo { position: relative; }
@@ -308,6 +307,10 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .hero-photo img {
   width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius);
 }
+/* Kids page: the video above the photo, which goes wider so the pair isn't too tall. */
+.hero-media { display: grid; gap: 28px; }
+.hero-video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); background: #000; object-fit: cover; }
+.hero-media .hero-photo img { aspect-ratio: 4 / 3; }
 
 .facts {
   display: flex; flex-wrap: wrap; gap: 14px 34px; margin-top: 6px; padding-top: 22px;
