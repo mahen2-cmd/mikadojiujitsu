@@ -341,7 +341,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .program-when { font-size: 0.85rem; font-weight: 600; color: var(--label); }
 .program-body .text-link { margin-top: auto; padding-top: 6px; }
 .program-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
-.program-wide .program-photo img { height: 100%; aspect-ratio: auto; min-height: 260px; }
+.program-wide .program-photo img { height: 100%; aspect-ratio: auto; min-height: 260px; object-position: center 15%; }
 .program-wide .program-body { padding: clamp(22px, 4vw, 40px); align-content: center; }
 .program-wide .program-body > p:not(.program-when) { max-width: 52ch; }
 @media (max-width: 640px) {
