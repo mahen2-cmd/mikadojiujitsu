@@ -148,6 +148,11 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 .button-ghost { background: transparent; color: var(--accent); }
 .button-ghost:hover { background: var(--accent); color: var(--on-accent); }
 .button-small { padding: 9px 18px; font-size: 0.9rem; }
+/* On phones the WhatsApp button and the menu already cover booking. */
+@media (max-width: 640px) {
+  .header-book { display: none; }
+  .menu-toggle { margin-left: auto; }
+}
 
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
