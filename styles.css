@@ -289,6 +289,7 @@ h3 { font-size: 1.15rem; line-height: 1.25; color: var(--heading); }
 }
 main { background-image: var(--hero-glow); background-repeat: no-repeat; background-size: 100% 900px; }
 .hero-copy { display: grid; gap: 22px; justify-items: start; }
+.hero-third { margin-bottom: 10px; font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; color: var(--heading); }
 .hero-sub { max-width: 54ch; font-size: 1.1rem; color: var(--ink-soft); }
 
 .hero-photo { position: relative; }
