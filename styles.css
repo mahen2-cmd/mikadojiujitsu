@@ -483,6 +483,13 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .quote p { font-size: 1.2rem; font-weight: 600; line-height: 1.4; color: var(--heading); }
 .quote cite { display: block; margin-top: 8px; font-size: 0.88rem; font-style: normal; color: var(--ink-soft); }
 
+/* "See more": the summary reads as a link and goes away once the rest is shown. */
+.see-more summary { width: fit-content; cursor: pointer; list-style: none; font-weight: 600; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.see-more summary::-webkit-details-marker { display: none; }
+.see-more summary::after { content: ' ▾'; font-size: 0.8em; }
+.see-more[open] summary { display: none; }
+.story-text .see-more > p + p { margin-top: 18px; }
+
 @media (max-width: 860px) {
   .story { grid-template-columns: 1fr; }
   .story-aside { position: static; }
@@ -546,7 +553,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 }
 .testimonial blockquote { margin: 0; }
 .testimonial blockquote p { color: var(--ink); line-height: 1.55; }
-.testimonial blockquote p + p { margin-top: 0.8em; }
+.testimonial blockquote p + p, .testimonial blockquote p + .see-more { margin-top: 0.8em; }
 .testimonial blockquote p:first-child::before { content: '“'; display: block; height: 0.7em; font: 400 3rem/1 var(--display); color: var(--sage); }
 .testimonial figcaption { align-self: end; font-size: 0.88rem; color: var(--ink-soft); }
 .testimonial figcaption strong { color: var(--heading); }
