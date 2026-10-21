@@ -932,7 +932,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .program-wide .program-photo { min-height: 0; }
   .program-wide .program-photo img { position: static; height: auto; aspect-ratio: 4 / 3; }
   .program-wide .program-body { padding: 22px; }
-  .coach-photo img { aspect-ratio: 4 / 3; object-position: center 25%; }
+  .coach-photo img { aspect-ratio: 4 / 3; object-position: center top; }
 }
 
 main img { filter: var(--photo-filter); }
