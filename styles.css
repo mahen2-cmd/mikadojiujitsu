@@ -515,6 +515,15 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { padding: 0 22px 20px; color: var(--ink-soft); max-width: 70ch; }
 
+/* --- Gym policies ---------------------------------------------------------- */
+
+.policies { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 32px; align-items: start; }
+.policy { display: grid; gap: 16px; }
+.policy h3 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.policy > p { color: var(--ink-soft); }
+.policy .faq-item { background: var(--surface-raised); }
+.faq-item ul { display: grid; gap: 8px; margin: 0; padding: 0 22px 20px 42px; list-style: disc; color: var(--ink-soft); max-width: 70ch; }
+
 /* --- Coaches --------------------------------------------------------------- */
 
 .coaches { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
