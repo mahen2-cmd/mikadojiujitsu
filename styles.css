@@ -515,16 +515,9 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { padding: 0 22px 20px; color: var(--ink-soft); max-width: 70ch; }
 
-/* --- Gym policies ---------------------------------------------------------- */
+/* --- Policy pages ---------------------------------------------------------- */
 
-.policies { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 32px; align-items: start; }
-.policy { display: grid; gap: 16px; }
-.policy h3 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; }
-.policy > p { color: var(--ink-soft); }
-.policy .faq-item { background: var(--surface-raised); }
-.faq-item ul { display: grid; gap: 8px; margin: 0; padding: 0 22px 20px 42px; list-style: disc; color: var(--ink-soft); max-width: 70ch; }
-
-/* The dojo etiquette page: each rule a numbered card. */
+/* The dojo etiquette and fees policy pages: each rule a numbered card. */
 .lead p + p { margin-top: 0.8em; }
 .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px; margin-top: 0; margin-bottom: 0; padding: 0; list-style: none; }
 .rule {
@@ -537,8 +530,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .rule ul { display: grid; gap: 8px; margin: 0; padding-left: 20px; list-style: disc; color: var(--ink-soft); }
 .rule p { color: var(--ink-soft); }
 .rule p + p { margin-top: 0.6em; }
-.etiquette-closing { margin-top: clamp(28px, 4vw, 44px); font-size: 1.08rem; font-weight: 500; color: var(--heading); }
-.etiquette-closing p { max-width: 60ch; }
+.rules-closing { margin-top: clamp(28px, 4vw, 44px); font-size: 1.08rem; font-weight: 500; color: var(--heading); }
+.rules-closing p { max-width: 60ch; }
 
 /* --- Coaches --------------------------------------------------------------- */
 
