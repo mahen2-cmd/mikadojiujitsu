@@ -318,6 +318,8 @@ function initMenu(header) {
   };
 
   button.addEventListener('click', () => setOpen(!isOpen()));
+  // Each item's place in reading order, for the staggered entrance in styles.css.
+  header.querySelectorAll('.site-nav a, .theme-toggle').forEach((item, i) => item.style.setProperty('--i', i));
   header.querySelectorAll('.site-nav a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
   document.addEventListener('click', (event) => { if (isOpen() && !header.contains(event.target)) setOpen(false); });
   document.addEventListener('keydown', (event) => {
@@ -336,6 +338,52 @@ function initMenu(header) {
 
   header.classList.add('has-menu');
   button.hidden = false;
+}
+
+// Sections rise in the first time they come into view. Ones already on screen
+// reveal straight away, so nothing is left hidden.
+function initReveals(sections) {
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealed');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  sections.forEach((section) => {
+    section.classList.add('reveal');
+    observer.observe(section);
+  });
+}
+
+// The tagline's words light up in reading order as they cross a line just
+// above the middle of the screen. Words crossing together step 60ms apart.
+function initTagline(line) {
+  if (!('IntersectionObserver' in window)) return;
+  const words = [];
+  [...line.childNodes].forEach((node) => {
+    if (node.nodeType !== Node.TEXT_NODE) return;
+    const pieces = node.textContent.split(/(\s+)/).map((piece) => {
+      if (!piece.trim()) return document.createTextNode(piece);
+      const word = document.createElement('span');
+      word.className = 'tagline-word';
+      word.textContent = piece;
+      words.push(word);
+      return word;
+    });
+    node.replaceWith(...pieces);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.filter((entry) => entry.isIntersecting)
+      .sort((a, b) => words.indexOf(a.target) - words.indexOf(b.target))
+      .forEach((entry, i) => {
+        entry.target.style.transitionDelay = `${i * 60}ms`;
+        entry.target.classList.add('is-lit');
+        observer.unobserve(entry.target);
+      });
+  }, { rootMargin: '0px 0px -45% 0px' });
+  words.forEach((word) => observer.observe(word));
 }
 
 // What a tapped element is called: its data-count name where the page gives
@@ -373,6 +421,8 @@ if (typeof document !== 'undefined') {
   document.querySelectorAll('[data-tabs]').forEach((root) => initTabs(root, (tabs) => tabs[0]));
   markEvents(document.querySelectorAll('[data-event-date]'), today.iso);
   document.querySelectorAll('[data-next-class]').forEach(initNextClass);
+  initReveals(document.querySelectorAll('main > .section:not(.tagline-reveal)'));
+  document.querySelectorAll('[data-tagline]').forEach(initTagline);
 }
 
 if (typeof module !== 'undefined') {
