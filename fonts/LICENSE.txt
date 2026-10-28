@@ -1,8 +1,7 @@
 anton-latin.woff2 — Anton, Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont)
 inter-latin.woff2 — Inter, Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)
-manrope-latin.woff2 — Manrope, Copyright 2018 The Manrope Project Authors (https://github.com/sharanda/manrope)
 
-All three are licensed under the SIL Open Font License, Version 1.1, reproduced below.
+Both are licensed under the SIL Open Font License, Version 1.1, reproduced below.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
