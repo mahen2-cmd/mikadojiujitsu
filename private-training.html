@@ -17,7 +17,7 @@
   <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=71c9ba68e6">
+  <link rel="stylesheet" href="styles.css?v=65be0e12fa">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -84,7 +84,7 @@
         </div>
         <ul class="facts">
           <li><strong>By appointment</strong> At a time that suits you</li>
-          <li><strong>From Rs 50,000</strong> 6 sessions</li>
+          <li><strong>From Rs 35,000</strong> 6 sessions</li>
           <li><strong>Coached by</strong> Shaheryar Khalid &amp; Amjad Khan</li>
         </ul>
       </div>
@@ -100,8 +100,8 @@
       <ul class="values">
       <li class="value"><h3>BJJ privates</h3><p>With Shaheryar Khalid, BJJ black belt under Pedro Falbo and Mikado Jiu Jitsu’s founder and head coach.</p></li>
 <li class="value"><h3>MMA privates</h3><p>With Amjad Khan, professional MMA fighter and Mikado Jiu Jitsu’s MMA head coach.</p></li>
-<li class="value"><h3>One-on-one</h3><p>One client with one trainer for the whole session.</p></li>
-<li class="value"><h3>Bring a partner</h3><p>In two-on-one sessions, two clients share one trainer.</p></li>
+<li class="value"><h3>One-on-one</h3><p>One client with one trainer for the whole session, with an assistant coach or the black belt coach.</p></li>
+<li class="value"><h3>Bring a partner</h3><p>In two-on-one sessions, two clients share the black belt coach.</p></li>
       </ul>
     </section>
 
@@ -125,75 +125,85 @@
         <div class="price-grid">
         <article class="price-card" id="pricing-private-1">
       <h3>Private Training 1-on-1</h3>
-      <ul class="plans">
-      <li class="plan">
-        <a class="plan-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%3A%206%20sessions%2C%20Rs%2050%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 6 sessions">
-          <span class="plan-name">6 sessions</span>
-          <span class="plan-price">Rs 50,000</span>
-          <span class="plan-book"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+      <table class="coach-prices">
+        <thead>
+          <tr>
+            <th scope="col"><span class="visually-hidden">Package</span></th>
+            <th scope="col">Assistant coach</th>
+<th scope="col" class="coach-black-belt"><span class="belt" aria-hidden="true"></span>Black belt coach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">6 sessions</th>
+            <td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%20with%20assistant%20coach%3A%206%20sessions%2C%20Rs%2035%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 6 sessions, Assistant coach" aria-label="6 sessions with assistant coach, Rs 35,000. Book on WhatsApp">Rs 35,000</a>
+          </td>
+<td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%20with%20black%20belt%20coach%3A%206%20sessions%2C%20Rs%2050%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 6 sessions, Black belt coach" aria-label="6 sessions with black belt coach, Rs 50,000. Book on WhatsApp">Rs 50,000</a>
+          </td>
+          </tr>
+<tr>
+            <th scope="row">12 sessions</th>
+            <td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%20with%20assistant%20coach%3A%2012%20sessions%2C%20Rs%2065%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 12 sessions, Assistant coach" aria-label="12 sessions with assistant coach, Rs 65,000. Book on WhatsApp">Rs 65,000</a>
+          </td>
+<td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%20with%20black%20belt%20coach%3A%2012%20sessions%2C%20Rs%2080%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 12 sessions, Black belt coach" aria-label="12 sessions with black belt coach, Rs 80,000. Book on WhatsApp">Rs 80,000</a>
+          </td>
+          </tr>
+<tr>
+            <th scope="row">24 sessions</th>
+            <td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%20with%20assistant%20coach%3A%2024%20sessions%2C%20Rs%20120%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 24 sessions, Assistant coach" aria-label="24 sessions with assistant coach, Rs 120,000. Book on WhatsApp">Rs 120,000</a>
+          </td>
+<td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%20with%20black%20belt%20coach%3A%2024%20sessions%2C%20Rs%20140%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 24 sessions, Black belt coach" aria-label="24 sessions with black belt coach, Rs 140,000. Book on WhatsApp">Rs 140,000</a>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="coach-prices-hint"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
         <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
         <path d="M9 8.2c.3-.4.8-.4 1 0l.8 1.8c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.2-.2.5-.3.8-.2l1.8.8c.4.2.4.7 0 1-.6.7-1.5 1-2.4.7A8 8 0 0 1 8.4 10.6c-.3-.9 0-1.8.6-2.4z" fill="currentColor" stroke="none"/>
-      </svg><span class="visually-hidden">Book on WhatsApp</span></span>
-        </a>
-      </li>
-<li class="plan">
-        <a class="plan-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%3A%2012%20sessions%2C%20Rs%2080%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 12 sessions">
-          <span class="plan-name">12 sessions</span>
-          <span class="plan-price">Rs 80,000</span>
-          <span class="plan-book"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-        <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
-        <path d="M9 8.2c.3-.4.8-.4 1 0l.8 1.8c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.2-.2.5-.3.8-.2l1.8.8c.4.2.4.7 0 1-.6.7-1.5 1-2.4.7A8 8 0 0 1 8.4 10.6c-.3-.9 0-1.8.6-2.4z" fill="currentColor" stroke="none"/>
-      </svg><span class="visually-hidden">Book on WhatsApp</span></span>
-        </a>
-      </li>
-<li class="plan">
-        <a class="plan-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%201-on-1%3A%2024%20sessions%2C%20Rs%20140%2C000." target="_blank" rel="noopener" data-count="Private Training 1-on-1: 24 sessions">
-          <span class="plan-name">24 sessions</span>
-          <span class="plan-price">Rs 140,000</span>
-          <span class="plan-book"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-        <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
-        <path d="M9 8.2c.3-.4.8-.4 1 0l.8 1.8c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.2-.2.5-.3.8-.2l1.8.8c.4.2.4.7 0 1-.6.7-1.5 1-2.4.7A8 8 0 0 1 8.4 10.6c-.3-.9 0-1.8.6-2.4z" fill="currentColor" stroke="none"/>
-      </svg><span class="visually-hidden">Book on WhatsApp</span></span>
-        </a>
-      </li>
-      </ul>
+      </svg> Tap a price to book on WhatsApp</p>
       <div class="price-notes"><p>One client with one trainer during the session.</p></div>
     </article>
 <article class="price-card" id="pricing-private-2">
       <h3>Private Training 2-on-1</h3>
-      <ul class="plans">
-      <li class="plan">
-        <a class="plan-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%202-on-1%3A%206%20sessions%2C%20Rs%2050%2C000." target="_blank" rel="noopener" data-count="Private Training 2-on-1: 6 sessions">
-          <span class="plan-name">6 sessions</span>
-          <span class="plan-price">Rs 50,000</span>
-          <span class="plan-book"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+      <table class="coach-prices">
+        <thead>
+          <tr>
+            <th scope="col"><span class="visually-hidden">Package</span></th>
+            <th scope="col" class="coach-black-belt"><span class="belt" aria-hidden="true"></span>Black belt coach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">6 sessions</th>
+            <td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%202-on-1%20with%20black%20belt%20coach%3A%206%20sessions%2C%20Rs%2050%2C000." target="_blank" rel="noopener" data-count="Private Training 2-on-1: 6 sessions, Black belt coach" aria-label="6 sessions with black belt coach, Rs 50,000. Book on WhatsApp">Rs 50,000</a>
+          </td>
+          </tr>
+<tr>
+            <th scope="row">12 sessions</th>
+            <td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%202-on-1%20with%20black%20belt%20coach%3A%2012%20sessions%2C%20Rs%2080%2C000." target="_blank" rel="noopener" data-count="Private Training 2-on-1: 12 sessions, Black belt coach" aria-label="12 sessions with black belt coach, Rs 80,000. Book on WhatsApp">Rs 80,000</a>
+          </td>
+          </tr>
+<tr>
+            <th scope="row">24 sessions</th>
+            <td class="coach-price">
+            <a class="coach-price-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%202-on-1%20with%20black%20belt%20coach%3A%2024%20sessions%2C%20Rs%20140%2C000." target="_blank" rel="noopener" data-count="Private Training 2-on-1: 24 sessions, Black belt coach" aria-label="24 sessions with black belt coach, Rs 140,000. Book on WhatsApp">Rs 140,000</a>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="coach-prices-hint"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
         <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
         <path d="M9 8.2c.3-.4.8-.4 1 0l.8 1.8c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.2-.2.5-.3.8-.2l1.8.8c.4.2.4.7 0 1-.6.7-1.5 1-2.4.7A8 8 0 0 1 8.4 10.6c-.3-.9 0-1.8.6-2.4z" fill="currentColor" stroke="none"/>
-      </svg><span class="visually-hidden">Book on WhatsApp</span></span>
-        </a>
-      </li>
-<li class="plan">
-        <a class="plan-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%202-on-1%3A%2012%20sessions%2C%20Rs%2080%2C000." target="_blank" rel="noopener" data-count="Private Training 2-on-1: 12 sessions">
-          <span class="plan-name">12 sessions</span>
-          <span class="plan-price">Rs 80,000</span>
-          <span class="plan-book"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-        <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
-        <path d="M9 8.2c.3-.4.8-.4 1 0l.8 1.8c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.2-.2.5-.3.8-.2l1.8.8c.4.2.4.7 0 1-.6.7-1.5 1-2.4.7A8 8 0 0 1 8.4 10.6c-.3-.9 0-1.8.6-2.4z" fill="currentColor" stroke="none"/>
-      </svg><span class="visually-hidden">Book on WhatsApp</span></span>
-        </a>
-      </li>
-<li class="plan">
-        <a class="plan-link" href="https://wa.me/923314086323?text=Hi%20Mikado%20Jiu%20Jitsu!%20I%E2%80%99m%20interested%20in%20Private%20Training%202-on-1%3A%2024%20sessions%2C%20Rs%20140%2C000." target="_blank" rel="noopener" data-count="Private Training 2-on-1: 24 sessions">
-          <span class="plan-name">24 sessions</span>
-          <span class="plan-price">Rs 140,000</span>
-          <span class="plan-book"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-        <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
-        <path d="M9 8.2c.3-.4.8-.4 1 0l.8 1.8c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.2-.2.5-.3.8-.2l1.8.8c.4.2.4.7 0 1-.6.7-1.5 1-2.4.7A8 8 0 0 1 8.4 10.6c-.3-.9 0-1.8.6-2.4z" fill="currentColor" stroke="none"/>
-      </svg><span class="visually-hidden">Book on WhatsApp</span></span>
-        </a>
-      </li>
-      </ul>
-      <div class="price-notes"><p>Two clients share one trainer during the session.</p></div>
+      </svg> Tap a price to book on WhatsApp</p>
+      <div class="price-notes"><p>Two clients share the black belt coach during the session.</p></div>
     </article>
         </div>
       </div>
