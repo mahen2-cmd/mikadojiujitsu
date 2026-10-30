@@ -491,9 +491,8 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--label);
 }
 .coach-prices thead th.coach-black-belt { color: var(--heading); }
-.coach-with { display: block; color: var(--label); }
 .coach-name {
-  display: block; margin: 2px 0 6px;
+  display: block; margin: 0 0 6px;
   font-size: 1rem; font-weight: 700; line-height: 1.2; letter-spacing: 0; text-transform: none;
 }
 .coach-rank { display: flex; align-items: center; justify-content: flex-end; gap: 6px; white-space: nowrap; }
