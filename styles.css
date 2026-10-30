@@ -491,8 +491,14 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--label);
 }
 .coach-prices thead th.coach-black-belt { color: var(--heading); }
+.coach-with { display: block; color: var(--label); }
+.coach-name {
+  display: block; margin: 2px 0 6px;
+  font-size: 1rem; font-weight: 700; line-height: 1.2; letter-spacing: 0; text-transform: none;
+}
+.coach-rank { display: flex; align-items: center; justify-content: flex-end; gap: 6px; white-space: nowrap; }
 .belt {
-  display: block; width: 34px; height: 8px; margin: 0 0 6px auto; border-radius: 2px;
+  flex: none; width: 34px; height: 8px; border-radius: 2px;
   background: linear-gradient(90deg, #111 0 58%, #b3261e 58% 82%, #111 82%);
   box-shadow: 0 0 0 1px var(--line);
 }
@@ -513,7 +519,14 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .coach-price { padding-left: 2px; }
   .coach-prices tbody th { font-size: 0.92rem; }
   .coach-prices thead th { padding-right: 6px; font-size: 0.66rem; letter-spacing: 0.04em; }
+  .coach-name { font-size: 0.88rem; }
+  .belt { width: 22px; height: 6px; }
   .coach-price-link { padding: 8px 6px; font-size: 0.95rem; }
+}
+@media (max-width: 360px) {
+  .coach-name { font-size: 0.8rem; }
+  .coach-rank { display: block; white-space: normal; }
+  .belt { display: block; margin: 0 0 4px auto; }
 }
 @media (max-width: 340px) {
   .coach-prices tbody th, .coach-price-link { font-size: 0.84rem; }
