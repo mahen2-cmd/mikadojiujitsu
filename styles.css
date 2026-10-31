@@ -412,11 +412,11 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .day-tabs { display: none; }
 .days { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; align-items: start; }
 .day {
-  position: relative; padding: 18px 16px; background: var(--surface);
+  position: relative; padding: 18px 16px; background: var(--band-sage);
   border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--card-shadow);
 }
-.day.is-today { background: var(--band-sage); border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-.day.is-today .lesson { border-top-color: rgba(18, 48, 91, 0.22); }
+.day.is-today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.day .lesson { border-top-color: rgba(18, 48, 91, 0.22); }
 .day-name {
   font-family: var(--display); font-weight: 400; font-size: 1.5rem; letter-spacing: 0.03em;
   text-transform: uppercase; margin-bottom: 14px;
