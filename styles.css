@@ -461,17 +461,17 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .price-card {
   display: grid; gap: 6px; align-content: start; padding: 26px;
-  background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--band-sage); border: 1px solid var(--line); border-radius: var(--radius);
   box-shadow: var(--card-shadow);
 }
 .price-card h3 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; }
-.plan { border-bottom: 1px solid var(--line); }
+.plan { border-bottom: 1px solid color-mix(in srgb, var(--heading) 22%, transparent); }
 .plan:last-child { border-bottom: 0; }
 .plan-link {
   display: flex; align-items: center; gap: 14px; margin: 0 -10px; padding: 14px 10px;
   border-radius: 10px; color: inherit; text-decoration: none; transition: background 0.15s ease;
 }
-.plan-link:hover, .plan-link:focus-visible { background: var(--band-sage); }
+.plan-link:hover, .plan-link:focus-visible { background: color-mix(in srgb, var(--heading) 10%, transparent); }
 .plan-name { flex: 1; }
 .plan-book {
   flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
@@ -502,7 +502,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   background: linear-gradient(90deg, #111 0 58%, #b3261e 58% 82%, #111 82%);
   box-shadow: 0 0 0 1px var(--line);
 }
-.coach-prices tbody tr { border-top: 1px solid var(--line); }
+.coach-prices tbody tr { border-top: 1px solid color-mix(in srgb, var(--heading) 22%, transparent); }
 .coach-prices tbody th { padding: 14px 0; text-align: left; font-weight: 500; white-space: nowrap; }
 .coach-price { padding: 6px 0 6px 6px; text-align: right; }
 .coach-price-link {
@@ -510,12 +510,16 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   font-weight: 700; color: var(--heading); text-decoration: none; white-space: nowrap;
   transition: background 0.15s ease;
 }
-.coach-price-link:hover, .coach-price-link:focus-visible { background: var(--band-sage); }
+.coach-price-link:hover, .coach-price-link:focus-visible { background: color-mix(in srgb, var(--heading) 10%, transparent); }
 .coach-price-none { color: var(--ink-soft); }
 .coach-prices-hint { display: flex; align-items: center; gap: 8px; padding-top: 4px; font-size: 0.85rem; color: var(--ink-soft); }
 .coach-prices-hint .whatsapp-icon { width: 17px; height: 17px; color: var(--whatsapp); }
-@media (max-width: 440px) {
+/* Sized by the card, not the screen: a card can be narrow on a desktop too. */
+.price-card:has(.coach-prices) { container-type: inline-size; }
+@media (max-width: 440px), (min-width: 1025px) and (max-width: 1179px) {
   .price-card:has(.coach-prices) { padding: 22px 18px; }
+}
+@container (max-width: 360px) {
   .coach-price { padding-left: 2px; }
   .coach-prices tbody th { font-size: 0.92rem; }
   .coach-prices thead th { padding: 4px 6px 10px 2px; font-size: 0.66rem; letter-spacing: 0.02em; }
@@ -523,17 +527,17 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .belt { width: 22px; height: 6px; }
   .coach-price-link { padding: 8px 6px; font-size: 0.95rem; }
 }
-@media (max-width: 380px) {
+@container (max-width: 306px) {
   .coach-prices thead th { padding-right: 4px; font-size: 0.6rem; letter-spacing: 0; }
   .coach-prices tbody th, .coach-price-link { font-size: 0.86rem; }
   .coach-price-link { padding: 8px 4px; }
 }
-@media (max-width: 360px) {
+@container (max-width: 288px) {
   .coach-name { font-size: 0.8rem; }
   .coach-rank { display: block; white-space: normal; }
   .belt { display: block; margin: 0 0 4px auto; }
 }
-@media (max-width: 340px) {
+@container (max-width: 270px) {
   .coach-prices tbody th, .coach-price-link { font-size: 0.8rem; }
 }
 
