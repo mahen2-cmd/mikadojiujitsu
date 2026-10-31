@@ -489,6 +489,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .coach-prices thead th {
   padding: 4px 10px 10px 6px; text-align: right; vertical-align: bottom;
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--label);
+  white-space: nowrap;
 }
 .coach-prices thead th.coach-black-belt { color: var(--heading); }
 .coach-name {
@@ -513,14 +514,19 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
 .coach-price-none { color: var(--ink-soft); }
 .coach-prices-hint { display: flex; align-items: center; gap: 8px; padding-top: 4px; font-size: 0.85rem; color: var(--ink-soft); }
 .coach-prices-hint .whatsapp-icon { width: 17px; height: 17px; color: var(--whatsapp); }
-@media (max-width: 400px) {
+@media (max-width: 440px) {
   .price-card:has(.coach-prices) { padding: 22px 18px; }
   .coach-price { padding-left: 2px; }
   .coach-prices tbody th { font-size: 0.92rem; }
-  .coach-prices thead th { padding-right: 6px; font-size: 0.66rem; letter-spacing: 0.04em; }
+  .coach-prices thead th { padding: 4px 6px 10px 2px; font-size: 0.66rem; letter-spacing: 0.02em; }
   .coach-name { font-size: 0.88rem; }
   .belt { width: 22px; height: 6px; }
   .coach-price-link { padding: 8px 6px; font-size: 0.95rem; }
+}
+@media (max-width: 380px) {
+  .coach-prices thead th { padding-right: 4px; font-size: 0.6rem; letter-spacing: 0; }
+  .coach-prices tbody th, .coach-price-link { font-size: 0.86rem; }
+  .coach-price-link { padding: 8px 4px; }
 }
 @media (max-width: 360px) {
   .coach-name { font-size: 0.8rem; }
@@ -528,8 +534,7 @@ main { background-image: var(--hero-glow); background-repeat: no-repeat; backgro
   .belt { display: block; margin: 0 0 4px auto; }
 }
 @media (max-width: 340px) {
-  .coach-prices tbody th, .coach-price-link { font-size: 0.84rem; }
-  .coach-price-link { padding: 8px 4px; }
+  .coach-prices tbody th, .coach-price-link { font-size: 0.8rem; }
 }
 
 /* --- Story ----------------------------------------------------------------- */
